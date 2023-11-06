@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Aurora</title>
+    <link rel="icon" type="image/x-icon" href="/static/index/favicon.ico">
+    <link rel="stylesheet" href="static/style_cytusii.css">
+    <script src="../custom-scripts.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <!-- Header Start -->
+      <header>
+        <div class="bg-image"></div>
+        <nav class="nav container">
+          <h2 class="nav_logo"><a href="index">Team Aurora</a></h2>
+
+          <ul class="menu_items">
+            <img src="static/index/times.svg" alt="timesicon" id="menu_toggle" />
+            <li><a href="index" class="nav_link">Home</a></li>
+            <li><a href="about" class="nav_link">About</a></li>
+            <li><a href="download" class="nav_link">Download</a></li>
+            <li><a href="https://t.me/teamauroraservice" class="nav_link">Contact</a></li>
+          </ul>
+          <img src="static/index/bars.svg" alt="timesicon" id="menu_toggle" />
+        </nav>
+      </header>
+      <!-- Header End -->
+
+      <!-- Hero Start -->
+      <section class="hero">
+        <div class="row container">
+          <div class="column">
+            <h2>Cytus II <br />Verion 5.0.8 Latest</h2>
+            <p>This just .obb</br>Need to replace using MT Manager</p>
+            <div class="buttons">
+              <a href="https://web1s.xyz/Cytus2ver508" class="btn">Drive</a>
+            </div>
+          </div>
+          <div class="column">
+            <img src="static/index/cytusii.png" alt="heroImg" class="hero_img" />
+          </div>
+        </div>
+      </section>
+      <footer id="footer" class="footer">Make by Team Aurora</footer>
+      <!-- Hero End-->
+    </main>
+
+    <script>
+      const header = document.querySelector("header");
+      const menuToggler = document.querySelectorAll("#menu_toggle");
+
+      menuToggler.forEach(toggler => {
+        toggler.addEventListener("click", () => header.classList.toggle("showMenu"));
+      });
+    </script>
+    
+  </body>
+  
+</html>

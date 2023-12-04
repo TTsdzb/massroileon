@@ -59,6 +59,14 @@
     </main>
 
     <script>
+      let popup = document.getElementById("popup");
+      function openPopup(){
+        popup.classList.add("open-popup")
+      }
+      function closePopup(){
+        popup.classList.remove("open-popup")
+      }
+
       const header = document.querySelector("header");
       const menuToggler = document.querySelectorAll("#menu_toggle");
 

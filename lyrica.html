@@ -34,9 +34,20 @@
           <div class="column">
             <h2>LyricaGX {Apks_Armv7}<br />Ver 4.8.0 Latest</h2>
             <p>Using SAI or MT Manager to Install Apks.</p>
-            <div class="buttons">
-              <a href="https://web1s.xyz/LyricaGX480" class="btn">Mega</a>
-            </div>
+            <div class="buttons" class="column">
+              <a class="btn" onclick="openPopup()">Drive</a>
+              <div class="popup" id="popup">
+                <img src="static/index/lyrica-icon.png">
+                <h2>LyricaGX</h2>
+                <div class="button">
+                  <a href="https://web1s.xyz/LyricaGXVer480F" class="btn">Drive / Web1s</a>
+                </div>
+
+                <div class="button">
+                  <a href="https://shrinkme.info/LyricaGX480" class="btn">Drive / ShrinkMe</a>
+                </div>
+                <button type="button" onclick="closePopup()">Close</button>
+              </div>
           </div>
           <div class="column">
             <img src="static/index/lyrica.png" alt="heroImg" class="hero_img" />
@@ -48,6 +59,14 @@
     </main>
 
     <script>
+      let popup = document.getElementById("popup");
+      function openPopup(){
+        popup.classList.add("open-popup")
+      }
+      function closePopup(){
+        popup.classList.remove("open-popup")
+      }
+      
       const header = document.querySelector("header");
       const menuToggler = document.querySelectorAll("#menu_toggle");
 

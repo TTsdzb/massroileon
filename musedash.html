@@ -34,9 +34,20 @@
           <div class="column">
             <h2>MusedashDX {Arm64}<br />Ver 3.11.0 Latest</h2>
             <p>Install Apk and Extract .obb to Android/Obb</p>
-            <div class="buttons">
-              <a href="https://web1s.xyz/note/MuseDash3110AN" class="btn">Drive</a>
-            </div>
+            <div class="buttons" class="column">
+              <a class="btn" onclick="openPopup()">Drive</a>
+              <div class="popup" id="popup">
+                <img src="static/index/musedash-icon.png">
+                <h2>MusedashDX</h2>
+                <div class="button">
+                  <a href="https://web1s.xyz/note/MuseDash3110AN" class="btn">Drive / Web1s</a>
+                </div>
+
+                <div class="button">
+                  <a href="https://shrinkme.info/MuseDash3110AN" class="btn">Drive / ShrinkMe</a>
+                </div>
+                <button type="button" onclick="closePopup()">Close</button>
+              </div>
           </div>
           <div class="column">
             <img src="static/index/musedash.png" alt="heroImg" class="hero_img" />
@@ -48,6 +59,14 @@
     </main>
 
     <script>
+      let popup = document.getElementById("popup");
+      function openPopup(){
+        popup.classList.add("open-popup")
+      }
+      function closePopup(){
+        popup.classList.remove("open-popup")
+      }
+
       const header = document.querySelector("header");
       const menuToggler = document.querySelectorAll("#menu_toggle");
 

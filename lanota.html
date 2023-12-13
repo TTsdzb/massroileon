@@ -14,6 +14,7 @@
         <div class="bg-image"></div>
         <nav class="nav container">
           <h2 class="nav_logo"><a href="index">Team Aurora</a></h2>
+
           <ul class="menu_items">
             <img src="static/index/times.svg" alt="timesicon" id="menu_toggle" />
             <li><a href="index" class="nav_link">Home</a></li>
@@ -31,38 +32,23 @@
       <section class="hero">
         <div class="row container">
           <div class="column">
-            <h2>Project Mod <br />By Team Aurora</h2>
-            <p>Own by Massroi Leon without password</p>
-            <div class="buttons">
-              <a href="arcaea" class="btn">Arcaea</a>
-              <a href="cytusii" class="btn">Cytus II</a>
-              <a href="dynamix" class="btn">Dynamix</a>
-            </div>
-            <div class="buttons">
-              <a href="musedash" class="btn">Musedash</a>
-              <a href="lyrica" class="btn">Lyrica</a>
-              <a href="rizline" class="btn">Rizline</a>
-            </div>
-            <div class="buttons">
-              <a href="hexahisteria" class="btn">HexaHisteria</a>
-              <a href="lanota" class="btn">Lanota</a>
-            </div>
+            <h2>LanotaDX {Apks_Arm64}<br />Ver 2.25.3 Latest</h2>
+            <p>Using Zarchive or SAI to Install.</p>
+            <div class="buttons" class="column">
+              <a class="btn" onclick="openPopup()">Drive</a>
+              <div class="popup" id="popup">
+                <img src="static/index/lanota-icon.png">
+                <h2>LanotaDX</h2>
+                <div class="button">
+                  <a href="https://web1s.xyz/note/LanotaDX2253N" class="btn">Drive / Web1s</a>
+                </div>
 
-            <h2>Muse Dash Crack PC<br />Verion 3.11.0</h2>
-            <p>Own by Massroi Leon without password</p>
-            <div class="buttons">
-              <a href="https://web1s.xyz/MuseDashV3110" class="btn">Drive</a>
-            </div>
-
-            <h2>Another Temp Mod<br/>Drive Link</h2>
-            <p></p>
-            <div class="buttons">
-              <a href="tempfile" class="btn">Open Temp Files</a>
-            </div>
-
+                <button type="button" onclick="closePopup()">Close</button>
+              </div>
           </div>
+        </div>
           <div class="column">
-            <img src="static/index/hero.png" alt="heroImg" class="hero_img" />
+            <img src="static/index/lanota.png" alt="heroImg" class="hero_img" />
           </div>
         </div>
       </section>
@@ -71,6 +57,14 @@
     </main>
 
     <script>
+      let popup = document.getElementById("popup");
+      function openPopup(){
+        popup.classList.add("open-popup")
+      }
+      function closePopup(){
+        popup.classList.remove("open-popup")
+      }
+
       const header = document.querySelector("header");
       const menuToggler = document.querySelectorAll("#menu_toggle");
 
@@ -78,6 +72,7 @@
         toggler.addEventListener("click", () => header.classList.toggle("showMenu"));
       });
     </script>
+    
   </body>
   
 </html>

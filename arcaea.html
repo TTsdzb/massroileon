@@ -53,8 +53,32 @@
 
             <h2>Arcaea HyperZP (Apks_Arm32)<br />Ver 520.r1 Latest</h2>
             <p>Using SAI or MT Manager to Install Apks.</br>Remove all Official chart and add Fanmade.</p>
-            <div class="buttons">
+            <div class="buttons" class="column">
+              <a class="btn" onclick="openPopup1()">Drive</a>
+              <div class="popup1" id="popup1">
+                <img src="static/index/arcaea-icon.png">
+                <h2>Arcaea HyperDX</h2>
+                <div class="button">
               <a href="https://web1s.xyz/note/GkWi2MVZNu" class="btn">Mega</a>
+            </div>
+
+            <button type="button" onclick="closePopup1()">Close</button>
+          </div>
+        </div>
+
+
+            <h2>Arcaea HyperDX NextGen (Apks_Arm32)<br />Ver 520.r15 Latest</h2>
+            <p>Using SAI or MT Manager to Install Apks.</br>This pro member support mod using Latest Arcaea.</br>This is development don't go in link. Thanks</p>
+            <div class="buttons" class="column">
+              <a class="btn" onclick="openPopup2()">Drive</a>
+              <div class="popup2" id="popup2">
+                <img src="static/index/arcaea-icon.png">
+                <h2>Arcaea HyperDX</h2>
+                <div class="button">
+                  <a href="https://web1s.xyz/note/ArcHyperNextG520r15g" class="btn">Drive / 3xWeb1s</a>
+                </div>
+                <button type="button" onclick="closePopup2()">Close</button>
+              </div>
             </div>
 
           </div>
@@ -74,6 +98,22 @@
       }
       function closePopup(){
         popup.classList.remove("open-popup")
+      }
+
+      let popup1 = document.getElementById("popup1");
+      function openPopup1(){
+        popup1.classList.add("open-popup1")
+      }
+      function closePopup1(){
+        popup1.classList.remove("open-popup1")
+      }
+
+      let popup2 = document.getElementById("popup2");
+      function openPopup2(){
+        popup2.classList.add("open-popup2")
+      }
+      function closePopup2(){
+        popup2.classList.remove("open-popup2")
       }
 
       const header = document.querySelector("header");

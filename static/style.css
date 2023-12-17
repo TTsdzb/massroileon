@@ -236,3 +236,91 @@ li {
     margin-top: 25px;
     gap: 10px;
 }
+
+
+
+
+.popup1{
+  width: 400px;
+  background: rgba(3, 3, 3, 0.9);
+  border-radius: 12px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #000;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup1{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%,-50%) scale(1);
+}
+
+.popup1 img{
+  width: 100px;
+  margin-top: -50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup1 button{
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background: transparent;
+  color: #fff;
+  border-radius: 32px;
+}
+
+.popup1 .button{
+    margin-top: 25px;
+    gap: 10px;
+}
+
+
+
+
+.popup2{
+  width: 400px;
+  background: rgba(3, 3, 3, 0.9);
+  border-radius: 12px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #000;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup2{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%,-50%) scale(1);
+}
+
+.popup2 img{
+  width: 100px;
+  margin-top: -50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup2 button{
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background: transparent;
+  color: #fff;
+  border-radius: 32px;
+}
+
+.popup2 .button{
+    margin-top: 25px;
+    gap: 10px;
+}

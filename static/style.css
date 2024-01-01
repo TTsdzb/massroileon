@@ -298,6 +298,18 @@ li {
   visibility: hidden;
   transition: transform 0.4s, top 0.4s;
 }
+.left-column {
+  width: 50%;
+  height: 100px;
+  float: left;
+  border-right: 1px solid #ddd;
+}
+.right-column {
+  width: 50%;
+  height: 100px;
+  float: right;
+  margin-right: 0;
+}
 
 .open-popup2{
   visibility: visible;

@@ -43,6 +43,10 @@ h2 {
   margin-top: 16px;
 }
 
+h1 {
+  color: #fff;
+}
+
 a {
   color: #fff;
   text-shadow: 2px 2px 4px #000000;

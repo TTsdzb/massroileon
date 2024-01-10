@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZeroX Gravity</title>
+    <link rel="icon" type="image/x-icon" href="/static/index/favicon.ico">
+    <link rel="stylesheet" href="static/style.css">
+    <script src="../custom-scripts.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <!-- Header Start -->
+      <header>
+        <div class="bg-image"></div>
+        <nav class="nav container">
+          <h2 class="nav_logo"><a href="index">ZeroX Gravity</a></h2>
+
+          <ul class="menu_items">
+            <img src="static/index/times.svg" alt="timesicon" id="menu_toggle" />
+            <li><a href="index" class="nav_link">Home</a></li>
+            <li><a href="about" class="nav_link">About</a></li>
+            <li><a href="download" class="nav_link">Download</a></li>
+            <li><a href="https://t.me/teamauroraservice" class="nav_link">Contact</a></li>
+            <li><a href="support" class="nav_link">Support</a></li>
+          </ul>
+          <img src="static/index/bars.svg" alt="timesicon" id="menu_toggle" />
+        </nav>
+      </header>
+      <!-- Header End -->
+
+      <!-- Hero Start -->
+      <section class="hero">
+        <div class="row container">
+          <div class="column">
+            <h2>HexaHysteriaOZ {Apk_Arm64}<br />Ver 1.7.0.2 Latest</h2>
+            <p>Install normal Apk.</p>
+            <div class="buttons" class="column">
+              <a class="btn" onclick="openPopup()">Drive</a>
+              <div class="popup" id="popup">
+                <img src="static/index/hexahisteria-icon.png">
+                <h2>HexaHysteriaOZ</h2>
+                <div class="button">
+                  <a href="https://web1s.xyz/HexaHisteria1702F" class="btn">Drive / Web1s</a>
+                </div>
+                <button type="button" onclick="closePopup()">Close</button>
+              </div>
+          </div>
+        </div>
+          <div class="column">
+            <img src="static/index/hexahisteria.png" alt="heroImg" class="hero_img" />
+          </div>
+        </div>
+      </section>
+      <footer id="footer" class="footer">Make by ZeroX Gravity</footer>
+      <!-- Hero End-->
+    </main>
+
+    <script>
+      let popup = document.getElementById("popup");
+      function openPopup(){
+        popup.classList.add("open-popup")
+      }
+      function closePopup(){
+        popup.classList.remove("open-popup")
+      }
+
+      const header = document.querySelector("header");
+      const menuToggler = document.querySelectorAll("#menu_toggle");
+
+      menuToggler.forEach(toggler => {
+        toggler.addEventListener("click", () => header.classList.toggle("showMenu"));
+      });
+    </script>
+    
+  </body>
+  
+</html>

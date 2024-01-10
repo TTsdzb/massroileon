@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZeroX Gravity</title>
+    <link rel="icon" type="image/x-icon" href="/static/index/favicon.ico">
+    <link rel="stylesheet" href="static/style.css">
+    <script src="../custom-scripts.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <!-- Header Start -->
+      <header>
+        <div class="bg-image"></div>
+        <nav class="nav container">
+          <h2 class="nav_logo"><a href="index">ZeroX Gravity</a></h2>
+          <ul class="menu_items">
+            <img src="static/index/times.svg" alt="timesicon" id="menu_toggle" />
+            <li><a href="index" class="nav_link">Home</a></li>
+            <li><a href="about" class="nav_link">About</a></li>
+            <li><a href="download" class="nav_link">Download</a></li>
+            <li><a href="https://t.me/teamauroraservice" class="nav_link">Contact</a></li>
+            <li><a href="support" class="nav_link">Support</a></li>
+          </ul>
+          <img src="static/index/bars.svg" alt="timesicon" id="menu_toggle" />
+        </nav>
+      </header>
+      <!-- Header End -->
+
+      <!-- Hero Start -->
+      <section class="hero">
+        <div class="row container">
+          <div class="column">
+            <h2>Project Mod <br />By ZeroX Gravity</h2>
+            <p>Own by ZeroX Gravity without password</p>
+            <div class="buttons">
+              <a href="arcaea" class="btn">Arcaea</a>
+              <a href="cytusii" class="btn">Cytus II</a>
+              <a href="dynamix" class="btn">Dynamix</a>
+            </div>
+            <div class="buttons">
+              <a href="musedash" class="btn">Musedash</a>
+              <a href="lyrica" class="btn">Lyrica</a>
+              <a href="rizline" class="btn">Rizline</a>
+            </div>
+            <div class="buttons">
+              <a href="hexahisteria" class="btn">HexaHisteria</a>
+              <a href="lanota" class="btn">Lanota</a>
+            </div>
+
+            <h2>Muse Dash Crack PC<br />Verion 3.12.0</h2>
+            <p>Own by ZeroX Gravity without password</p>
+            <div class="buttons">
+              <a href="https://web1s.xyz/MuseDashVer3120PCS" class="btn">Drive</a>
+            </div>
+
+            <h2>Another Temp Mod<br/>Drive Link</h2>
+            <p></p>
+            <div class="buttons">
+              <a href="tempfile" class="btn">Open Temp Files</a>
+            </div>
+
+          </div>
+          <div class="column">
+            <img src="static/index/hero.png" alt="heroImg" class="hero_img" />
+          </div>
+        </div>
+      </section>
+      <footer id="footer" class="footer">Make by ZeroX Gravity</footer>
+      <!-- Hero End-->
+    </main>
+
+    <script>
+      const header = document.querySelector("header");
+      const menuToggler = document.querySelectorAll("#menu_toggle");
+
+      menuToggler.forEach(toggler => {
+        toggler.addEventListener("click", () => header.classList.toggle("showMenu"));
+      });
+    </script>
+  </body>
+  
+</html>

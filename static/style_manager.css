@@ -9,6 +9,7 @@
 
 main {
     background: url("index/default.jpg") , #000;
+    background-attachment:fixed;
 }
 
 

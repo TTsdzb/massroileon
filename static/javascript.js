@@ -1,7 +1,7 @@
 //IzumiDesu ID:0001
 document.addEventListener('DOMContentLoaded', function () {
   // Set the date we're counting down to
-  var countdownIzumiDate = new Date("Feb 6, 2024 00:00:00").getTime();
+  var countdownIzumiDate = new Date("Mar 8, 2024 00:00:00").getTime();
 
   // Update the countdownIzumi every 1 second
   var x = setInterval(function() {

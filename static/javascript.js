@@ -10,7 +10,8 @@ const data = [
     id: "0002",
     displayName: "Madohara",
     donateDate: "06-01-2024",
-    dueDate: "Mar 7, 2024 00:00:00",
+    Reward: "+1 day (Web1s Event)",
+    dueDate: "Mar 9, 2024 00:00:00",
   },
   {
     id: "0003",
@@ -100,7 +101,14 @@ const data = [
     id: "0017",
     displayName: "Ái Nhi",
     donateDate: "04-02-2024",
-    dueDate: "Mar 6, 2024 00:00:00",
+    Reward: "+1 day (Web1s Event)",
+    dueDate: "Mar 7, 2024 00:00:00",
+  },
+  {
+    id: "0018",
+    displayName: "Joseph Vu",
+    donateDate: "06-02-2024",
+    dueDate: "Mar 8, 2024 00:00:00",
   },
 ];
 
@@ -136,6 +144,13 @@ document.addEventListener("DOMContentLoaded", function () {
     counts.appendChild(expireTime);
 
     counts.appendChild(document.createElement("br"));
+
+    const Rewarded = document.createElement("p");
+if (player.Reward !== undefined && player.Reward !== null) {
+    Rewarded.innerHTML = `Rewarded : ${player.Reward}`;
+    counts.appendChild(Rewarded);
+    counts.appendChild(document.createElement("br"));
+}
 
     const countdown = document.createElement("div");
     countdown.className = "countdown";

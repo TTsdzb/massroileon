@@ -168,8 +168,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // If the countdown is over, display a message
       if (distance < 0) {
-        clearInterval(x);
-        document.getElementById(`countdown${player.id}`).innerText = "EXPIRED";
+        document.getElementById(`countdown${player.id}`).innerHTML =
+          "<span>EXPIRED</span>";
         return;
       }
 

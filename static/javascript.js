@@ -2,96 +2,152 @@
 const data = [
   {
     id: "0001",
-    countdownName: "Izumi",
+    displayName: "Izumi",
+    donateDate: "06-01-2024",
     dueDate: "Mar 8, 2024 00:00:00",
   },
   {
     id: "0002",
-    countdownName: "Madohara",
+    displayName: "Madohara",
+    donateDate: "06-01-2024",
     dueDate: "Mar 7, 2024 00:00:00",
   },
   {
     id: "0003",
-    countdownName: "Truong",
+    displayName: "Nguyen Truong",
+    donateDate: "06-01-2024",
     dueDate: "Mar 10, 2024 00:00:00",
   },
   {
     id: "0004",
-    countdownName: "Kyukami",
+    displayName: "Kyukami",
+    donateDate: "09-01-2024",
     dueDate: "Feb 9, 2024 00:00:00",
   },
   {
     id: "0005",
-    countdownName: "VuDuc",
+    displayName: "Vũ Đức",
+    donateDate: "06-01-2024",
     dueDate: "Mar 8, 2024 00:00:00",
   },
   {
     id: "0006",
-    countdownName: "zi7o",
+    displayName: "zi7o",
+    donateDate: "13-01-2024",
     dueDate: "Feb 13, 2024 00:00:00",
   },
   {
     id: "0007",
-    countdownName: "Lucas",
+    displayName: "Lucas",
+    donateDate: "13-01-2024",
     dueDate: "Feb 13, 2024 00:00:00",
   },
   {
     id: "0008",
-    countdownName: "Oreorio",
+    displayName: "Oreorio",
+    donateDate: "14-01-2024",
     dueDate: "Feb 14, 2024 00:00:00",
   },
   {
     id: "0009",
-    countdownName: "Samson",
+    displayName: "Samson",
+    donateDate: "16-01-2024",
     dueDate: "Feb 16, 2024 00:00:00",
   },
   {
     id: "0010",
-    countdownName: "Cheese",
+    displayName: "Cheese",
+    donateDate: "16-01-2024",
     dueDate: "Feb 16, 2024 00:00:00",
   },
   {
     id: "0011",
-    countdownName: "RayRay",
+    displayName: "RayRay_1112",
+    donateDate: "16-01-2024",
     dueDate: "Feb 14, 2024 00:00:00",
   },
   {
     id: "0012",
-    countdownName: "TTsdzb",
+    displayName: "TTsdzb",
+    donateDate: "17-01-2024",
     dueDate: "Mar 20, 2024 00:00:00",
   },
   {
     id: "0013",
-    countdownName: "SunareAi",
+    displayName: "Sunare Aiko Vt.",
+    donateDate: "18-01-2024",
     dueDate: "Feb 18, 2024 00:00:00",
   },
   {
     id: "0014",
-    countdownName: "SanNgoc",
+    displayName: "San Ngọc",
+    donateDate: "27-01-2024",
     dueDate: "Feb 27, 2024 00:00:00",
   },
   {
     id: "0015",
-    countdownName: "NgocAnh",
+    displayName: "Mai Trần Ngọc Anh",
+    donateDate: "27-01-2024",
     dueDate: "Feb 27, 2024 00:00:00",
   },
   {
     id: "0016",
-    countdownName: "RimuruIz",
+    displayName: "Rimuru Izanobi",
+    donateDate: "27-01-2024",
     dueDate: "Feb 27, 2024 00:00:00",
   },
   {
     id: "0017",
-    countdownName: "AiNhi",
+    displayName: "Ái Nhi",
+    donateDate: "04-02-2024",
     dueDate: "Mar 6, 2024 00:00:00",
   },
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Convert date string to timestamp
+  // Create a div to store countdowns
+  const counts = document.createElement("div");
+  counts.className = "column";
+
+  // Prepare elements and data for each player
   data.forEach((player) => {
-    player.dueDate = new Date(player.dueDate).getTime();
+    // Generate date string to timestamp
+    const dueDate = new Date(player.dueDate);
+    player.dueDate = dueDate.getTime();
+
+    // Create essential html elements
+    const username = document.createElement("h2");
+    username.innerHTML = `User : ${player.displayName} <br>ID: ${player.id}`;
+    counts.appendChild(username);
+
+    const donateTime = document.createElement("p");
+    donateTime.innerText = `Donate Time: ${player.donateDate}`;
+    counts.appendChild(donateTime);
+
+    const expireTime = document.createElement("p");
+    // Format expire date from countdown data
+    // This is a little complicated without third-party libraries
+    expireTime.innerText = `Expired To : ${dueDate
+      .getDate()
+      .toString()
+      .padStart(2, "0")}-${(dueDate.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}-${dueDate.getFullYear()}`;
+    counts.appendChild(expireTime);
+
+    counts.appendChild(document.createElement("br"));
+
+    const countdown = document.createElement("div");
+    countdown.className = "countdown";
+    countdown.id = `countdown${player.id}`;
+    countdown.innerHTML = `<span>Time remaining: </span><span id="time${player.id}"></span>`;
+    counts.appendChild(countdown);
+
+    counts.appendChild(document.createElement("hr"));
   });
+
+  // Add count container to the DOM tree
+  document.getElementById("countdown-container").appendChild(counts);
 
   // Update the countdown every 1 second
   setInterval(function () {
@@ -113,17 +169,14 @@ document.addEventListener("DOMContentLoaded", function () {
       // If the countdown is over, display a message
       if (distance < 0) {
         clearInterval(x);
-        document.getElementById(`countdown${player.countdownName}`).innerHTML =
-          "EXPIRED";
+        document.getElementById(`countdown${player.id}`).innerText = "EXPIRED";
         return;
       }
 
       // Display the countdown
-      document.getElementById(`days${player.id}`).innerHTML = days + "d :";
-      document.getElementById(`hours${player.id}`).innerHTML = hours + "h :";
-      document.getElementById(`minutes${player.id}`).innerHTML =
-        minutes + "m :";
-      document.getElementById(`seconds${player.id}`).innerHTML = seconds + "s ";
+      document.getElementById(
+        `time${player.id}`
+      ).innerText = `${days}d : ${hours}h : ${minutes}m : ${seconds}s`;
     });
   }, 1000);
 });

@@ -94,7 +94,7 @@ const data = [
     id: "0016",
     displayName: "Rimuru Izanobi",
     donateDate: "27-01-2024",
-    dueDate: "Feb 27, 2024 00:00:00",
+    dueDate: "Feb 6, 2024 00:00:00",
   },
   {
     id: "0017",
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // If the countdown is over, display a message
       if (distance < 0) {
         document.getElementById(`countdown${player.id}`).innerHTML =
-          "<span>EXPIRED</span>";
+          "<span>>>> Renewal failed: EXPIRED <<<</span><br><p>--- Status Account: Freeze ---</p>";
         return;
       }
 

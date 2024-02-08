@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     counts.appendChild(document.createElement("br"));
 
     const Rewarded = document.createElement("p");
-if (player.Reward !== undefined && player.Reward !== null) {
+if (player.Reward !== undefined) {
     Rewarded.innerHTML = `Rewarded : ${player.Reward}`;
     counts.appendChild(Rewarded);
     counts.appendChild(document.createElement("br"));
@@ -196,7 +196,7 @@ if (player.Reward !== undefined && player.Reward !== null) {
       // If the countdown is over, display a message
       if (distance < 0) {
         document.getElementById(`countdown${player.id}`).innerHTML =
-          "<span>>>> Renewal failed: EXPIRED <<<</span><br><p>--- Status Account: Freeze ---</p>";
+          "<span>>>> Renewal failed: EXPIRED <<<</span><br><p>--- Account Status: Freeze ---</p>";
         return;
       }
 

@@ -145,9 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
     isPro.innerHTML = `${player.userPro ? "Premium" : "New"} User: ${player.displayName} <br>ID: ${player.id}`;
     counts.appendChild(username);
     counts.appendChild(isPro);
-    
-    
-    
 
     // Generate date string to timestamp
     const dueDate = new Date(player.dueDate);

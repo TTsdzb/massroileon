@@ -2,12 +2,14 @@
 const data = [
   {
     id: "0001",
+    userPro: true,
     displayName: "Izumi",
     donateDate: "06-01-2024",
     dueDate: "Mar 8, 2024 00:00:00",
   },
   {
     id: "0002",
+    userPro: true,
     displayName: "Madohara",
     donateDate: "06-01-2024",
     Reward: "+1 day (Web1s Event)",
@@ -15,6 +17,7 @@ const data = [
   },
   {
     id: "0003",
+    userPro: true,
     displayName: "Nguyen Truong",
     donateDate: "06-01-2024",
     dueDate: "Mar 10, 2024 00:00:00",
@@ -27,6 +30,7 @@ const data = [
   },
   {
     id: "0005",
+    userPro: true,
     displayName: "Vũ Đức",
     donateDate: "06-01-2024",
     dueDate: "Mar 8, 2024 00:00:00",
@@ -39,6 +43,7 @@ const data = [
   },
   {
     id: "0007",
+    userPro: true,
     displayName: "Lucas",
     donateDate: "13-01-2024",
     dueDate: "Mar 15, 2024 00:00:00",
@@ -69,6 +74,7 @@ const data = [
   },
   {
     id: "0012",
+    userPro: true,
     displayName: "TTsdzb",
     donateDate: "17-01-2024",
     dueDate: "Mar 20, 2024 00:00:00",
@@ -87,6 +93,7 @@ const data = [
   },
   {
     id: "0015",
+    userPro: true,
     displayName: "Mai Trần Ngọc Anh",
     donateDate: "27-01-2024",
     dueDate: "Mar 29, 2024 00:00:00",
@@ -131,14 +138,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Prepare elements and data for each player
   data.forEach((player) => {
+
+    const isPro = document.createElement("h2");
+    const username = document.createElement("h2");
+    if (player.userPro == true) {
+      isPro.innerHTML = `Premium User: ${player.displayName} <br>ID: ${player.id}`;
+      counts.appendChild(username);
+      counts.appendChild(isPro);
+    }
+    else {
+      isPro.innerHTML = `New User: ${player.displayName} <br>ID: ${player.id}`;
+      counts.appendChild(username);
+      counts.appendChild(isPro);
+    }
+    
+
     // Generate date string to timestamp
     const dueDate = new Date(player.dueDate);
     player.dueDate = dueDate.getTime();
 
-    // Create essential html elements
-    const username = document.createElement("h2");
-    username.innerHTML = `User : ${player.displayName} <br>ID: ${player.id}`;
-    counts.appendChild(username);
 
     const donateTime = document.createElement("p");
     donateTime.innerText = `Donate Time: ${player.donateDate}`;
@@ -157,12 +175,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     counts.appendChild(document.createElement("br"));
 
+    //Add reward for user
     const Rewarded = document.createElement("p");
-if (player.Reward !== undefined) {
+    if (player.Reward !== undefined) {
     Rewarded.innerHTML = `Rewarded : ${player.Reward}`;
     counts.appendChild(Rewarded);
     counts.appendChild(document.createElement("br"));
-}
+    }
 
     const countdown = document.createElement("div");
     countdown.className = "countdown";

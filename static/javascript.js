@@ -141,16 +141,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const isPro = document.createElement("h2");
     const username = document.createElement("h2");
-    if (player.userPro == true) {
-      isPro.innerHTML = `Premium User: ${player.displayName} <br>ID: ${player.id}`;
-      counts.appendChild(username);
-      counts.appendChild(isPro);
-    }
-    else {
-      isPro.innerHTML = `New User: ${player.displayName} <br>ID: ${player.id}`;
-      counts.appendChild(username);
-      counts.appendChild(isPro);
-    }
+
+    isPro.innerHTML = `${player.userPro ? "Premium" : "New"} User: ${player.displayName} <br>ID: ${player.id}`;
+    counts.appendChild(username);
+    counts.appendChild(isPro);
+    
+    
     
 
     // Generate date string to timestamp

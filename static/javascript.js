@@ -12,8 +12,8 @@ const data = [
     userPro: true,
     displayName: "Madohara",
     donateDate: "06-01-2024",
-    Reward: "+1 day (Web1s Event)",
-    dueDate: "Mar 9, 2024 00:00:00",
+    Reward: "+1 day (Web1s Event) <br> Rewarded: Top 3 Event Time 06-02",
+    dueDate: "Mar 10, 2024 00:00:00",
   },
   {
     id: "0003",
@@ -39,7 +39,8 @@ const data = [
     id: "0006",
     displayName: "zi7o",
     donateDate: "13-01-2024",
-    dueDate: "Feb 13, 2024 00:00:00",
+    Reward: "Top 2 Event Time 06-02",
+    dueDate: "Feb 15, 2024 00:00:00",
   },
   {
     id: "0007",
@@ -115,7 +116,8 @@ const data = [
     id: "0018",
     displayName: "Joseph Vu",
     donateDate: "06-02-2024",
-    dueDate: "Mar 8, 2024 00:00:00",
+    Reward: "Top 1 Event Time 06-02",
+    dueDate: "Mar 11, 2024 00:00:00",
   },
   {
     id: "0019",

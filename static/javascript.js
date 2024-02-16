@@ -57,6 +57,7 @@ const data = [
   },
   {
     id: "0009",
+    userPro: true,
     displayName: "Samson",
     donateDate: "16-01-2024",
     dueDate: "Mar 18, 2024 00:00:00",
@@ -69,9 +70,10 @@ const data = [
   },
   {
     id: "0011",
+    userPro: true,
     displayName: "RayRay_1112",
     donateDate: "16-01-2024",
-    dueDate: "Feb 16, 2024 00:00:00",
+    dueDate: "Mar 18, 2024 00:00:00",
   },
   {
     id: "0012",

@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const isPro = document.createElement("h2");
     const username = document.createElement("h2");
 
-    isPro.innerHTML = `${player.userPro ? "Premium" : "New"} User: ${player.displayName} <br>ID: ${player.id}`;
+    isPro.innerHTML = `${player.userPro ? "Pro" : "New"} User: ${player.displayName} <br>ID: ${player.id}`;
     counts.appendChild(username);
     counts.appendChild(isPro);
 

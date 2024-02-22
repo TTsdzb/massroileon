@@ -12,7 +12,6 @@ const data = [
     userPro: true,
     displayName: "Madohara",
     donateDate: "06-01-2024",
-    Reward: "+1 day (Web1s Event) <br> Rewarded: Top 3 Event Time 06-02",
     dueDate: "Mar 10, 2024 00:00:00",
   },
   {
@@ -39,7 +38,6 @@ const data = [
     id: "0006",
     displayName: "zi7o",
     donateDate: "13-01-2024",
-    Reward: "Top 2 Event Time 06-02",
     dueDate: "Feb 15, 2024 00:00:00",
   },
   {
@@ -103,22 +101,21 @@ const data = [
   },
   {
     id: "0016",
+    userPro: true,
     displayName: "Rimuru Izanobi",
     donateDate: "27-01-2024",
-    dueDate: "Feb 27, 2024 00:00:00",
+    dueDate: "Mar 29, 2024 00:00:00",
   },
   {
     id: "0017",
     displayName: "Ái Nhi",
     donateDate: "04-02-2024",
-    Reward: "+1 day (Web1s Event)",
     dueDate: "Mar 7, 2024 00:00:00",
   },
   {
     id: "0018",
     displayName: "Joseph Vu",
     donateDate: "06-02-2024",
-    Reward: "Top 1 Event Time 06-02",
     dueDate: "Mar 11, 2024 00:00:00",
   },
   {
@@ -144,6 +141,12 @@ const data = [
     displayName: "bagelseeker",
     donateDate: "16-02-2024",
     dueDate: "Mar 18, 2024 00:00:00",
+  },
+  {
+    id: "0023",
+    displayName: "Re UniuM",
+    donateDate: "21-02-2024",
+    dueDate: "Mar 23, 2024 00:00:00",
   },
 ];
 

@@ -93,7 +93,7 @@ const data = [
     userPro: true,
     displayName: "Sunare Aiko Vt.",
     donateDate: "18-01-2024",
-    dueDate: "Jun 23, 2024 00:00:00",
+    dueDate: "May 24, 2024 00:00:00",
   },
   {
     id: "0014",

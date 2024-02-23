@@ -1,6 +1,14 @@
 // Provide countdown data
 const data = [
   {
+    id: "0000",
+    userPro: true,
+    LifeTime: true,
+    displayName: "MassroiLeon",
+    donateDate: "06-01-2024",
+    dueDate: "Jan 1, 2099 00:00:00",
+  },
+  {
     id: "0001",
     userPro: true,
     displayName: "Izumi",
@@ -165,6 +173,11 @@ document.addEventListener("DOMContentLoaded", function () {
     isPro.innerHTML = `${player.userPro ? "Pro" : "New"} User: ${player.displayName} <br>ID: ${player.id}`;
     counts.appendChild(username);
     counts.appendChild(isPro);
+
+    const isLife = document.createElement("h2");
+
+    isLife.innerHTML = `LifeTime Status: ${player.LifeTime ? "Yes" : "No"}`;
+    counts.appendChild(isLife);
 
     // Generate date string to timestamp
     const dueDate = new Date(player.dueDate);

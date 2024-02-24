@@ -3,10 +3,8 @@ const data = [
   {
     id: "0000",
     userPro: true,
-    LifeTime: true,
     displayName: "MassroiLeon",
     donateDate: "06-01-2024",
-    dueDate: "Jan 1, 2099 00:00:00",
   },
   {
     id: "0001",
@@ -166,53 +164,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Prepare elements and data for each player
   data.forEach((player) => {
-
     const isPro = document.createElement("h2");
     const username = document.createElement("h2");
 
-    isPro.innerHTML = `${player.userPro ? "Pro" : "New"} User: ${player.displayName} <br>ID: ${player.id}`;
+    isPro.innerHTML = `${player.userPro ? "Pro" : "New"} User: ${
+      player.displayName
+    } <br>ID: ${player.id}`;
     counts.appendChild(username);
     counts.appendChild(isPro);
 
     const isLife = document.createElement("h2");
 
-    isLife.innerHTML = `LifeTime Status: ${player.LifeTime ? "Yes" : "No"}`;
+    isLife.innerHTML = `LifeTime Status: ${
+      player.dueDate === undefined ? "Yes" : "No"
+    }`;
     counts.appendChild(isLife);
 
-    // Generate date string to timestamp
-    const dueDate = new Date(player.dueDate);
-    player.dueDate = dueDate.getTime();
-
+    // Convert date string to date
+    if (player.dueDate !== undefined) player.dueDate = new Date(player.dueDate);
 
     const donateTime = document.createElement("p");
     donateTime.innerText = `Donate Time: ${player.donateDate}`;
     counts.appendChild(donateTime);
 
     const expireTime = document.createElement("p");
-    // Format expire date from countdown data
+    // If the player has lifetime privilege, simply ignore due date
+    // Otherwise, format expire date from countdown data
     // This is a little complicated without third-party libraries
-    expireTime.innerText = `Expired To : ${dueDate
-      .getDate()
-      .toString()
-      .padStart(2, "0")}-${(dueDate.getMonth() + 1)
-      .toString()
-      .padStart(2, "0")}-${dueDate.getFullYear()}`;
+    expireTime.innerText = `Expired To : ${
+      player.dueDate === undefined
+        ? "Lifetime"
+        : `${player.dueDate.getDate().toString().padStart(2, "0")}-${(
+            player.dueDate.getMonth() + 1
+          )
+            .toString()
+            .padStart(2, "0")}-${player.dueDate.getFullYear()}`
+    }`;
     counts.appendChild(expireTime);
+
+    // Convert date to timestamp
+    if (player.dueDate !== undefined) player.dueDate = player.dueDate.getTime();
 
     counts.appendChild(document.createElement("br"));
 
     //Add reward for user
     const Rewarded = document.createElement("p");
     if (player.Reward !== undefined) {
-    Rewarded.innerHTML = `Rewarded : ${player.Reward}`;
-    counts.appendChild(Rewarded);
-    counts.appendChild(document.createElement("br"));
+      Rewarded.innerHTML = `Rewarded : ${player.Reward}`;
+      counts.appendChild(Rewarded);
+      counts.appendChild(document.createElement("br"));
     }
 
     const countdown = document.createElement("div");
     countdown.className = "countdown";
     countdown.id = `countdown${player.id}`;
-    countdown.innerHTML = `<span>Time remaining: </span><span id="time${player.id}"></span>`;
+    // If has lifetime privilege add an infinite char to counter
+    countdown.innerHTML = `<span>Time remaining: </span><span id="time${
+      player.id
+    }">${player.dueDate === undefined ? "∞" : ""}</span>`;
     counts.appendChild(countdown);
 
     counts.appendChild(document.createElement("hr"));
@@ -227,6 +236,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const now = new Date().getTime();
 
     data.forEach((player) => {
+      // If player has lifetime privilege, ignore him
+      if (player.dueDate === undefined) return;
+
       // Calculate the remaining time
       const distance = player.dueDate - now;
 

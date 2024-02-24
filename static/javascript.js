@@ -84,7 +84,6 @@ const data = [
     userPro: true,
     displayName: "TTsdzb",
     donateDate: "17-01-2024",
-    dueDate: "Mar 20, 2024 00:00:00",
   },
   {
     id: "0013",

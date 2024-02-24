@@ -141,9 +141,11 @@ const data = [
   },
   {
     id: "0021",
+    userPro: true,
+    LifeTime: true,
     displayName: "lid.n",
     donateDate: "14-02-2024",
-    dueDate: "Mar 16, 2024 00:00:00",
+    dueDate: "Jan 1, 2099 00:00:00",
   },
   {
     id: "0022",

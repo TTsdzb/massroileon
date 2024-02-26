@@ -160,6 +160,12 @@ const data = [
     displayName: "ok boomber",
     donated: "Full",
   },
+  {
+    id: "0025",
+    displayName: "Duy Nguyen Minh Dang",
+    donated: "70K/512K",
+    dueDate: "Mar 28, 2024 00:00:00",
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", function () {

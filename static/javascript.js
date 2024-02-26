@@ -4,155 +4,161 @@ const data = [
     id: "0000",
     userPro: true,
     displayName: "MassroiLeon",
-    donateDate: "06-01-2024",
+    donated: "Full",
   },
   {
     id: "0001",
     userPro: true,
     displayName: "Izumi",
-    donateDate: "06-01-2024",
+    donated: "4$/24$",
     dueDate: "Mar 8, 2024 00:00:00",
   },
   {
     id: "0002",
     userPro: true,
     displayName: "Madohara",
-    donateDate: "06-01-2024",
+    donated: "115K/512K",
     dueDate: "May 11, 2024 00:00:00",
   },
   {
     id: "0003",
     userPro: true,
     displayName: "Nguyen Truong",
-    donateDate: "06-01-2024",
+    donated: "175K/512K",
     dueDate: "Apr 10, 2024 00:00:00",
   },
   {
     id: "0004",
     displayName: "Kyukami",
-    donateDate: "09-01-2024",
+    donated: "2$/24$",
     dueDate: "Feb 9, 2024 00:00:00",
   },
   {
     id: "0005",
     userPro: true,
     displayName: "Vũ Đức",
-    donateDate: "06-01-2024",
+    donated: "80K/512K",
     dueDate: "Mar 8, 2024 00:00:00",
   },
   {
     id: "0006",
     displayName: "zi7o",
-    donateDate: "13-01-2024",
+    donated: "2$/24$",
     dueDate: "Feb 15, 2024 00:00:00",
   },
   {
     id: "0007",
     userPro: true,
     displayName: "Lucas",
-    donateDate: "13-01-2024",
+    donated: "5$/24$",
     dueDate: "Apr 15, 2024 00:00:00",
   },
   {
     id: "0008",
     displayName: "Oreorio",
-    donateDate: "14-01-2024",
+    donated: "2$/24$",
     dueDate: "Feb 14, 2024 00:00:00",
   },
   {
     id: "0009",
     userPro: true,
     displayName: "Samson",
-    donateDate: "16-01-2024",
+    donated: "4$/24$",
     dueDate: "Mar 18, 2024 00:00:00",
   },
   {
     id: "0010",
     displayName: "Cheese",
-    donateDate: "16-01-2024",
+    donated: "2$/24$",
     dueDate: "Feb 16, 2024 00:00:00",
   },
   {
     id: "0011",
     userPro: true,
     displayName: "RayRay_1112",
-    donateDate: "16-01-2024",
+    donated: "4$/24$",
     dueDate: "Mar 18, 2024 00:00:00",
   },
   {
     id: "0012",
     userPro: true,
     displayName: "TTsdzb",
-    donateDate: "17-01-2024",
+    donated: "Full",
   },
   {
     id: "0013",
     userPro: true,
     displayName: "Sunare Aiko Vt.",
-    donateDate: "18-01-2024",
+    donated: "7$/24$",
     dueDate: "May 24, 2024 00:00:00",
   },
   {
     id: "0014",
     displayName: "San Ngọc",
-    donateDate: "27-01-2024",
+    donated: "80K/512K",
     dueDate: "Mar 29, 2024 00:00:00",
   },
   {
     id: "0015",
     userPro: true,
     displayName: "Mai Trần Ngọc Anh",
-    donateDate: "27-01-2024",
+    donated: "135K/512K",
     dueDate: "Jul 29, 2024 00:00:00",
   },
   {
     id: "0016",
     userPro: true,
     displayName: "Rimuru Izanobi",
-    donateDate: "27-01-2024",
+    donated: "4$/24$",
     dueDate: "Mar 29, 2024 00:00:00",
   },
   {
     id: "0017",
+    userPro: true,
     displayName: "Ái Nhi",
-    donateDate: "04-02-2024",
-    dueDate: "Mar 7, 2024 00:00:00",
+    donated: "Full",
   },
   {
     id: "0018",
     displayName: "Joseph Vu",
-    donateDate: "06-02-2024",
+    donated: "2$/24$",
     dueDate: "Mar 11, 2024 00:00:00",
   },
   {
     id: "0019",
     displayName: "Đặng Đạt",
-    donateDate: "07-02-2024",
+    donated: "70K/512K",
     dueDate: "Mar 9, 2024 00:00:00",
   },
   {
     id: "0020",
     displayName: "Christian Jay",
-    donateDate: "08-02-2024",
+    donated: "2$/24$",
     dueDate: "Mar 10, 2024 00:00:00",
   },
   {
     id: "0021",
     userPro: true,
     displayName: "lid.n",
-    donateDate: "14-02-2024",
+    donated: "Full",
   },
   {
     id: "0022",
     displayName: "bagelseeker",
-    donateDate: "16-02-2024",
+    donated: "2$/24$",
     dueDate: "Mar 18, 2024 00:00:00",
   },
   {
     id: "0023",
     displayName: "Re UniuM",
-    donateDate: "21-02-2024",
+    donated: "2$/24$",
     dueDate: "Mar 23, 2024 00:00:00",
+  },
+  {
+    id: "0024",
+    userPro: true,
+    displayName: "ok boomber",
+    donated: "Full",
   },
 ];
 
@@ -182,9 +188,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Convert date string to date
     if (player.dueDate !== undefined) player.dueDate = new Date(player.dueDate);
 
-    const donateTime = document.createElement("p");
-    donateTime.innerText = `Donate Time: ${player.donateDate}`;
-    counts.appendChild(donateTime);
+    const donatedcost = document.createElement("p");
+    donatedcost.innerText = `Donated: ${player.donated}`;
+    counts.appendChild(donatedcost);
 
     const expireTime = document.createElement("p");
     // If the player has lifetime privilege, simply ignore due date

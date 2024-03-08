@@ -121,9 +121,9 @@ const data = [
   },
   {
     id: "0018",
+    userPro: true,
     displayName: "Joseph Vu",
-    donated: "2$/24$",
-    dueDate: "Mar 11, 2024 00:00:00",
+    donated: "Full",
   },
   {
     id: "0019",

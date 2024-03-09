@@ -196,8 +196,8 @@ const data = [
   {
     id: "0030",
     displayName: "Haruinnqv.",
-    donated: "50K/512K",
-    dueDate: "Apr 7, 2024 00:00:00",
+    donated: "100K/512K",
+    dueDate: "May 6, 2024 00:00:00",
   },
 ];
 

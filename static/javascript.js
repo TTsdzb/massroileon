@@ -148,8 +148,8 @@ const data = [
   {
     id: "0022",
     displayName: "bagelseeker",
-    donated: "2$/24$",
-    dueDate: "Mar 18, 2024 00:00:00",
+    donated: "4$/24$",
+    dueDate: "Apr 17, 2024 00:00:00",
   },
   {
     id: "0023",

@@ -17,7 +17,6 @@ const data = [
     id: "0002",
     userPro: true,
     displayName: "Madohara",
-    Reward: "Top 1 Event 04-03",
     donated: "115K/512K",
     dueDate: "May 14, 2024 00:00:00",
   },
@@ -28,12 +27,12 @@ const data = [
     donated: "175K/512K",
     dueDate: "Apr 10, 2024 00:00:00",
   },
-  /*{
+  {
     id: "0004",
     displayName: "Kyukami",
-    donated: "2$/24$",
+    donated: "0$/24$",
     dueDate: "Feb 9, 2024 00:00:00",
-  },*/
+  },
   {
     id: "0005",
     userPro: true,
@@ -41,12 +40,12 @@ const data = [
     donated: "123K/512K",
     dueDate: "Apr 7, 2024 00:00:00",
   },
-  /*{
+  {
     id: "0006",
     displayName: "zi7o",
-    donated: "2$/24$",
+    donated: "0$/24$",
     dueDate: "Feb 15, 2024 00:00:00",
-  },*/
+  },
   {
     id: "0007",
     userPro: true,
@@ -54,30 +53,28 @@ const data = [
     donated: "5$/24$",
     dueDate: "Apr 15, 2024 00:00:00",
   },
-  /*{
+  {
     id: "0008",
     displayName: "Oreorio",
-    donated: "2$/24$",
+    donated: "0$/24$",
     dueDate: "Feb 14, 2024 00:00:00",
-  },*/
+  },
   {
     id: "0009",
-    userPro: true,
     displayName: "Samson",
-    donated: "4$/24$",
+    donated: "0$/24$",
     dueDate: "Mar 18, 2024 00:00:00",
   },
-  /*{
+  {
     id: "0010",
     displayName: "Cheese",
-    donated: "2$/24$",
+    donated: "0$/24$",
     dueDate: "Feb 16, 2024 00:00:00",
-  },*/
+  },
   {
     id: "0011",
-    userPro: true,
     displayName: "RayRay_1112",
-    donated: "4$/24$",
+    donated: "0$/24$",
     dueDate: "Mar 18, 2024 00:00:00",
   },
   {
@@ -111,7 +108,7 @@ const data = [
     id: "0016",
     userPro: true,
     displayName: "Rimuru Izanobi",
-    donated: "4$/24$",
+    donated: "75K/512K",
     dueDate: "Mar 29, 2024 00:00:00",
   },
   {
@@ -128,8 +125,8 @@ const data = [
   },
   {
     id: "0019",
+    userPro: true,
     displayName: "Đặng Đạt",
-    Reward: "Top 3 Event 04-03",
     donated: "93K/512K",
     dueDate: "Apr 9, 2024 00:00:00",
   },
@@ -147,6 +144,7 @@ const data = [
   },
   {
     id: "0022",
+    userPro: true,
     displayName: "bagelseeker",
     donated: "4$/24$",
     dueDate: "Apr 17, 2024 00:00:00",
@@ -162,13 +160,13 @@ const data = [
     userPro: true,
     displayName: "ok boomber",
     donated: "Full",
-  }/*,
+  },
   {
     id: "0025",
     displayName: "Duy Nguyen Minh Dang",
-    donated: "70K/512K",
-    dueDate: "Mar 28, 2024 00:00:00",
-  }*/,
+    donated: "0K/512K",
+    dueDate: "Mar 1, 2024 00:00:00",
+  },
   {
     id: "0026",
     displayName: "36263572 bili",
@@ -178,7 +176,6 @@ const data = [
   {
     id: "0027",
     displayName: "Zack",
-    Reward: "Top 2 Event 04-03",
     donated: "2$/24$",
     dueDate: "Apr 2, 2024 00:00:00",
   },
@@ -196,6 +193,7 @@ const data = [
   },
   {
     id: "0030",
+    userPro: true,
     displayName: "Haruinnqv.",
     donated: "100K/512K",
     dueDate: "May 6, 2024 00:00:00",
@@ -214,6 +212,7 @@ const data = [
   },
   {
     id: "0033",
+    userPro: true,
     displayName: "Korei",
     donated: "5$/24$",
     dueDate: "Jun 11, 2024 00:00:00",

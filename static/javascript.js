@@ -18,7 +18,8 @@ const data = [
     userPro: true,
     displayName: "Madohara",
     donated: "115K/512K",
-    dueDate: "May 14, 2024 00:00:00",
+    Rewarded: "Top 2 Event 16-3",
+    dueDate: "May 16, 2024 00:00:00",
   },
   {
     id: "0003",
@@ -128,7 +129,8 @@ const data = [
     userPro: true,
     displayName: "Đặng Đạt",
     donated: "93K/512K",
-    dueDate: "Apr 9, 2024 00:00:00",
+    Rewarded: "Top 3 Event 16-3",
+    dueDate: "Apr 10, 2024 00:00:00",
   },
   {
     id: "0020",
@@ -177,7 +179,8 @@ const data = [
     id: "0027",
     displayName: "Zack",
     donated: "2$/24$",
-    dueDate: "Apr 2, 2024 00:00:00",
+    Reward: "Top 1 Event 16-3",
+    dueDate: "Apr 5, 2024 00:00:00",
   },
   {
     id: "0028",

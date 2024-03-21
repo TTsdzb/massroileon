@@ -232,13 +232,13 @@ const data = [
   {
     id: "0036",
     displayName: "Ch1m Hoèng",
-    donated: "2$/24$",
+    donated: "50K/512K",
     dueDate: "Apr 20, 2024 00:00:00",
   },
   {
     id: "0037",
     displayName: "Celes Siesta",
-    donated: "2$/24$",
+    donated: "40K/512K",
     dueDate: "Apr 20, 2024 00:00:00",
   },
   {

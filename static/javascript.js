@@ -135,7 +135,7 @@ const data = [
   {
     id: "0020",
     displayName: "Christian Jay",
-    donated: "2$/24$",
+    donated: "0$/24$",
     dueDate: "Mar 10, 2024 00:00:00",
   },
   {

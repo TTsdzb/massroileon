@@ -178,9 +178,9 @@ const data = [
   {
     id: "0027",
     displayName: "Zack",
-    donated: "2$/24$",
+    donated: "4$/24$",
     Reward: "Top 1 Event 16-3",
-    dueDate: "Apr 5, 2024 00:00:00",
+    dueDate: "May 5, 2024 00:00:00",
   },
   {
     id: "0028",

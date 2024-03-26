@@ -345,11 +345,15 @@ li {
 
 .rota{
   width: 100%;
-  padding: 0px 0px 10px 0px;
+  padding: 5px 0px 5px 0px;
   color: #fff;
   display: block;
   font-size: 18px;
   text-align: center;
+  border: #000 solid 1px;
+  border-radius: 20px;
+  text-shadow: 2px 2px 3px #000000;
+  background-color: #000000c0;
 }
 
 .roti{

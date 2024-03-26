@@ -342,3 +342,38 @@ li {
     margin-top: 25px;
     gap: 10px;
 }
+
+.rota{
+  width: 100%;
+  padding: 0px 0px 10px 0px;
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-align: center;
+}
+
+.roti{
+  font-size: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 18px;
+}
+
+.down2a{
+  width: 100%;
+  display: block;
+  font-size: 18px;
+  padding-left: 2%;
+}
+
+.down2a a{
+  color: #fff;
+}
+
+.down2a ul{
+  padding-left: 65px;
+}
+
+.down2a li{
+  padding: 10px;
+}

@@ -9,6 +9,7 @@
 
 main {
     background: url("index/musedash.jpg") , #000;
+    background-attachment: fixed;
 }
 
 

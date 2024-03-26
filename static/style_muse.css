@@ -342,3 +342,19 @@ li {
     margin-top: 25px;
     gap: 10px;
 }
+
+.musa{
+  width: 100%;
+  padding: 0px 0px 10px 0px;
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-align: center;
+}
+
+.musi{
+  font-size: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 18px;
+}

@@ -110,8 +110,8 @@ const data = [
     id: "0016",
     userPro: true,
     displayName: "Rimuru Izanobi",
-    donated: "75K/512K",
-    dueDate: "Mar 29, 2024 00:00:00",
+    donated: "121K/512K",
+    dueDate: "May 28, 2024 00:00:00",
   },
   {
     id: "0017",

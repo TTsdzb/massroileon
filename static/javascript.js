@@ -185,8 +185,9 @@ const data = [
   },
   {
     id: "0028",
+    userPro: true,
     displayName: "fat ccllcc",
-    donated: "2$/24$",
+    donated: "4$/24$",
     dueDate: "May 2, 2024 00:00:00",
   },
   {

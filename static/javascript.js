@@ -19,14 +19,14 @@ const data = [
     displayName: "Madohara",
     donated: "115K/512K",
     Rewarded: "Top 2 Event 16-3",
-    dueDate: "May 16, 2024 00:00:00",
+    dueDate: "Jun 15, 2024 00:00:00",
   },
   {
     id: "0003",
     userPro: true,
     displayName: "Nguyen Truong",
     donated: "175K/512K",
-    dueDate: "Apr 10, 2024 00:00:00",
+    dueDate: "Aug 10, 2024 00:00:00",
   },
   {
     id: "0004",
@@ -254,21 +254,33 @@ const data = [
   },
   {
     id: "0039",
-    displayName: "Copper King",
+    displayName: "清风 泡柠檬",
     donated: "2$/24$",
-    dueDate: "Apr 21, 2024 00:00:00",
+    dueDate: "Apr 25, 2024 00:00:00",
   },
   {
     id: "0040",
+    displayName: "ᕕ(◠ڼ◠)ᕗ",
+    donated: "2$/24$",
+    dueDate: "Apr 26, 2024 00:00:00",
+  },
+  {
+    id: "0041",
     displayName: "Copper King",
     donated: "2$/24$",
     dueDate: "Apr 29, 2024 00:00:00",
   },
   {
-    id: "0041",
+    id: "0042",
     displayName: "Tan Flame",
     donated: "2$/24$",
     dueDate: "May 2, 2024 00:00:00",
+  },
+  {
+    id: "0043",
+    displayName: "愛刃",
+    donated: "2$/24$",
+    dueDate: "May 3, 2024 00:00:00",
   },
 ];
 

@@ -266,7 +266,7 @@ const data = [
   },
   {
     id: "0041",
-    displayName: "Copper King",
+    displayName: "Cooper King",
     donated: "2$/24$",
     dueDate: "Apr 29, 2024 00:00:00",
   },

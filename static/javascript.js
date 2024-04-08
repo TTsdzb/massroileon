@@ -224,9 +224,10 @@ const data = [
   },
   {
     id: "0034",
+    userPro: true,
     displayName: "Ka non",
-    donated: "2$/24$",
-    dueDate: "Apr 15, 2024 00:00:00",
+    donated: "6$/24$",
+    dueDate: "Jul 14, 2024 00:00:00",
   },
   {
     id: "0035",

@@ -27,33 +27,33 @@ const data = [
     displayName: "Nguyen Truong",
     donated: "225K/512K",
     dueDate: "Aug 10, 2024 00:00:00",
-  },
+  }/*,
   {
     id: "0004",
     displayName: "Kyukami",
     donated: "0$/24$",
     dueDate: "Feb 9, 2024 00:00:00",
-  },
+  }*/,
   {
     id: "0005",
     userPro: true,
     displayName: "Vũ Đức",
     donated: "123K/512K",
     dueDate: "May 7, 2024 00:00:00",
-  },
+  }/*,
   {
     id: "0006",
     displayName: "zi7o",
     donated: "0$/24$",
     dueDate: "Feb 15, 2024 00:00:00",
-  },
+  }*/,
   {
     id: "0007",
     userPro: true,
     displayName: "Lucas",
     donated: "7$/24$",
     dueDate: "Jun 14, 2024 00:00:00",
-  },
+  }/*,
   {
     id: "0008",
     displayName: "Oreorio",
@@ -71,7 +71,7 @@ const data = [
     displayName: "Cheese",
     donated: "0$/24$",
     dueDate: "Feb 16, 2024 00:00:00",
-  },
+  }*/,
   {
     id: "0011",
     displayName: "そのRay..",
@@ -132,13 +132,13 @@ const data = [
     donated: "116K/512K",
     Rewarded: "Top 3 Event 16-3",
     dueDate: "May 10, 2024 00:00:00",
-  },
+  }/*,
   {
     id: "0020",
     displayName: "Christian Jay",
     donated: "0$/24$",
     dueDate: "Mar 10, 2024 00:00:00",
-  },
+  }*/,
   {
     id: "0021",
     userPro: true,
@@ -163,7 +163,7 @@ const data = [
     userPro: true,
     displayName: "ok boomber",
     donated: "Full",
-  },
+  }/*,
   {
     id: "0025",
     displayName: "Duy Nguyen Minh Dang",
@@ -175,7 +175,7 @@ const data = [
     displayName: "36263572 bili",
     donated: "0$/24$",
     dueDate: "Mar 29, 2024 00:00:00",
-  },
+  }*/,
   {
     id: "0027",
     displayName: "Zack",
@@ -193,6 +193,7 @@ const data = [
   {
     id: "0029",
     displayName: "Moeo",
+    Zone: "07-05-2024",
     donated: "2$/24$",
     dueDate: "Apr 6, 2024 00:00:00",
   },
@@ -202,7 +203,7 @@ const data = [
     displayName: "Haruinnqv.",
     donated: "100K/512K",
     dueDate: "May 6, 2024 00:00:00",
-  },
+  }/*,
   {
     id: "0031",
     displayName: "jeong jimin",
@@ -214,7 +215,7 @@ const data = [
     displayName: "Airee",
     donated: "2$/24$",
     dueDate: "Apr 10, 2024 00:00:00",
-  },
+  }*/,
   {
     id: "0033",
     userPro: true,
@@ -303,6 +304,18 @@ const data = [
     donated: "5$/24$",
     dueDate: "Jul 5, 2024 00:00:00",
   },
+  {
+    id: "0047",
+    displayName: "Ybe",
+    donated: "2$/24$",
+    dueDate: "May 12, 2024 00:00:00",
+  },
+  {
+    id: "0048",
+    displayName: "Roux Cristasse",
+    donated: "2$/24$",
+    dueDate: "May 12, 2024 00:00:00",
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -327,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
       player.dueDate === undefined ? "Yes" : "No"
     }`;
     counts.appendChild(isLife);
-
+    
     // Convert date string to date
     if (player.dueDate !== undefined) player.dueDate = new Date(player.dueDate);
 
@@ -349,6 +362,14 @@ document.addEventListener("DOMContentLoaded", function () {
             .padStart(2, "0")}-${player.dueDate.getFullYear()}`
     }`;
     counts.appendChild(expireTime);
+
+
+    //Add zone for user
+    const isZone = document.createElement("p");
+    if (player.Zone !== undefined) {
+      isZone.innerHTML = `Zone Date : ${player.Zone}`;
+      counts.appendChild(isZone);
+    }
 
     // Convert date to timestamp
     if (player.dueDate !== undefined) player.dueDate = player.dueDate.getTime();

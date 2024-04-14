@@ -10,7 +10,7 @@
 main {
     background: url("index/musedash.jpg") , #000;
     background-attachment: fixed;
-}
+  }
 
 
 .container {
@@ -344,7 +344,7 @@ li {
     gap: 10px;
 }
 
-.musa{
+.rota{
   width: 100%;
   padding: 5px 0px 5px 0px;
   color: #fff;
@@ -357,9 +357,128 @@ li {
   background-color: #000000c0;
 }
 
-.musi{
+.roti{
   font-size: 12px;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 18px;
+}
+
+.down2a{
+  width: 100%;
+  display: block;
+  font-size: 16px;
+  padding-left: 2%;
+}
+
+.down2a a{
+  color: #fff;
+}
+
+.down2a ul{
+  padding-left: 65px;
+}
+
+.down2a li{
+  padding: 12px;
+}
+
+.btn2a{
+  padding: 12px;
+}
+
+/* CSS for the full image popup */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+}
+
+.popup-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.popup-img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+/* CSS for the next arrow */
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+
+
+.thumbnail-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* Thêm hiệu ứng cuộn mượt trên iOS */
+  scrollbar-width: thin; /* Định dạng thanh cuộn trên các trình duyệt mới */
+  scrollbar-color: #ffffffd3 transparent; /* Màu sắc của thanh cuộn */
+}
+
+/* Định dạng của thanh cuộn trên các trình duyệt mới (Firefox) */
+.thumbnail-container::-webkit-scrollbar {
+  width: 4px; /* Độ rộng của thanh cuộn */
+}
+
+/* Định dạng của thanh cuộn trên các trình duyệt mới (Firefox) */
+.thumbnail-container::-webkit-scrollbar-thumb {
+  background-color: #ffffffd3; /* Màu sắc của thanh cuộn */
+  border-radius: 2px; /* Độ cong của viền thanh cuộn */
+}
+
+
+.thumbnail {
+  margin-right: 5px; /* Khoảng cách giữa các ảnh */
+  border: 2px solid transparent; /* Đảm bảo rằng có một phần viền xung quanh hình ảnh */
+}
+
+
+.thumbnail-wrapper {
+  display: inline-flex;
+}
+
+.thumbnail img {
+  scroll-snap-align: start; /* Đảm bảo rằng mỗi ảnh bắt đầu ở vị trí cuối cùng của container */
+}
+
+.thumbnail:hover {
+  border-color: blue; /* Màu viền khi rê chuột qua */
+}
+
+.thumbnail.active {
+  border: 2px solid blue; /* Màu viền khi hiển thị */
 }

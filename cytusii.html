@@ -4,7 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZeroX Gravity</title>
     <link rel="icon" type="image/x-icon" href="/static/index/favicon.ico">
-    <link rel="stylesheet" href="static/style_cytusii.css">
+    <link rel="stylesheet" href="static/style.css">
+    <style>
+      .thumbnail {
+        cursor: pointer;
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
     <script src="../custom-scripts.js" defer></script>
   </head>
   <body>
@@ -31,10 +37,39 @@
       <section class="hero">
         <div class="row container">
           <div class="column">
-            <h2>Cytus II <br />Verion 5.0.10 Latest</h2>
-            <p>This just .obb</br>Need to replace using MT Manager</p>
+            <h2>Cytus 2 Project <br />Verion 5.0.11 Latest</h2>
+            <p>Replace file .obb in folder Android/obb</p>
+            <br>
+            <div class="rota">>>> Changelog <<<</div>
+            <ul class="roti">
+              <li>Added some skin character</li>
+              <li>Added some TapFX</li>
+              <li>Capsoshop to 0</li>
+              <li>Etc...</li>
+              <li>Note: This not unlock DLC</li>
+            </ul>
+
+            <div class="gallery thumbnail-container">
+              <div class="thumbnail-wrapper">
+                <a href="static/index/thumbnail/cytusii/1.jpg" class="thumbnail">
+                  <img src="static/index/thumbnail/cytusii/1.jpg" alt="Thumbnail 1" width="220" height="100">
+                </a>
+                <a href="static/index/thumbnail/cytusii/2.jpg" class="thumbnail">
+                  <img src="static/index/thumbnail/cytusii/2.jpg" alt="Thumbnail 1" width="220" height="100">
+                </a>
+                <a href="static/index/thumbnail/cytusii/3.jpg" class="thumbnail">
+                  <img src="static/index/thumbnail/cytusii/3.jpg" alt="Thumbnail 1" width="220" height="100">
+                </a>
+                <a href="static/index/thumbnail/cytusii/4.jpg" class="thumbnail">
+                  <img src="static/index/thumbnail/cytusii/4.jpg" alt="Thumbnail 1" width="220" height="100">
+                </a>
+              <!-- Add more thumbnails here -->
+              </div>
+            </div>
+            
+
             <div class="buttons">
-              <a href="https://drive.google.com/drive/folders/1YkjYsE4drQ--qAIwKlgvOGse8NU_thR6?usp=sharing" class="btn">Drive</a>
+              <a href="https://shrinkme.site/Cytus2P5011" class="btn">Download</a>
             </div>
           </div>
           <div class="column">
@@ -46,6 +81,8 @@
       <!-- Hero End-->
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script>
       const header = document.querySelector("header");
       const menuToggler = document.querySelectorAll("#menu_toggle");
@@ -53,6 +90,77 @@
       menuToggler.forEach(toggler => {
         toggler.addEventListener("click", () => header.classList.toggle("showMenu"));
       });
+
+
+      $(document).ready(function() {
+      $('.gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        gallery:{
+          enabled:true
+        },
+        removalDelay: 300,
+        mainClass: 'mfp-fade'
+      });
+    });
+
+
+    window.onload = function() {
+  let thumbnails = document.querySelectorAll('.thumbnail');
+  let index = 0;
+
+  function scrollToNextThumbnail() {
+    if (index >= thumbnails.length) {
+      index = 0;
+    }
+    thumbnails[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+
+    // Xóa lớp active khỏi các ảnh cũ
+    thumbnails.forEach(function(thumbnail) {
+      thumbnail.classList.remove('active');
+    });
+
+    // Thêm lớp active cho ảnh hiện tại đang cuộn
+    thumbnails[index].classList.add('active');
+
+    index++;
+  }
+
+  // Gọi hàm scrollToNextThumbnail() sau mỗi 5 giây
+  setInterval(scrollToNextThumbnail, 5000); // 5000 milliseconds = 5 giây
+
+  // Thêm sự kiện scroll để thực hiện việc thêm lớp active cho thumbnail hiển thị trong viewport
+  window.addEventListener('scroll', function() {
+    let visibleThumbnail = getVisibleThumbnail();
+
+    // Xóa lớp active khỏi các ảnh cũ
+    thumbnails.forEach(function(thumbnail) {
+      thumbnail.classList.remove('active');
+    });
+
+    // Thêm lớp active cho thumbnail hiển thị trong viewport
+    if (visibleThumbnail) {
+      visibleThumbnail.classList.add('active');
+    }
+  });
+
+  function getVisibleThumbnail() {
+    for (let i = 0; i < thumbnails.length; i++) {
+      let rect = thumbnails[i].getBoundingClientRect();
+      if (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      ) {
+        return thumbnails[i];
+      }
+    }
+    return null;
+  }
+};
+
+
     </script>
     
   </body>

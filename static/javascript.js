@@ -354,6 +354,7 @@ const data = [
   },
   {
     id: "0055",
+    userPro: true,
     displayName: "Li frozen",
     donated: "8$/24$",
     dueDate: "Oct 18, 2024 00:00:00",

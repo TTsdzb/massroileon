@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Songs</title>
+    <style>
+        /* CSS để tạo hai cột */
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            flex: 0 0 48%; /* Độ rộng của mỗi cột */
+        }
+        /* CSS để tạo viền bo cho phần JSON Output */
+        #jsonOutput {
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Song List Maker<br>Ver: 0.0.1beta</h2>
+    <!-- Phần thông tin bài hát -->
+    <div class="container">
+        <div class="column">
+            <input type="text" id="newIdx" placeholder="Idx">
+            <br>
+            <input type="text" id="newId" placeholder="Id song">
+            <br>
+            <input type="text" id="newTitleEn" placeholder="Title (en)">
+            <br>
+            <input type="text" id="newTitleJp" placeholder="Title (jp)">
+            <br>
+            <input type="text" id="newArtist" placeholder="Artist">
+            <br>
+            <input type="text" id="newBpm" placeholder="Bpm">
+            <br>
+            <input type="text" id="newBpmBase" placeholder="Bpm base">
+            <br>
+            <input type="text" id="newSet" placeholder="Set">
+            <br>
+            <input type="text" id="newPurchase" placeholder="Purchase">
+            <br>
+            <input type="text" id="newAudioPreview" placeholder="Audio preview">
+            <br>
+            <input type="text" id="newAudioPreviewEnd" placeholder="Audio preview end">
+            <br>
+            <input type="text" id="newSide" placeholder="Side">
+            <br>
+            <input type="text" id="newBg" placeholder="Bg">
+            <br>
+            <input type="text" id="newBgInverse" placeholder="Bg inverse">
+            <br>
+            <input type="text" id="newDate" placeholder="Date">
+            <br>
+            <input type="text" id="newVersion" placeholder="Version">
+            <br>
+        </div>
+        <!-- Phần thông tin khó khăn -->
+        <div class="column">   
+            <!-- Đầu vào cho các thông tin khó khăn -->
+            <a>Difficulty: 0</a>
+            <br>
+            <input type="text" id="rating0" placeholder="Rating">
+            <br>
+            <input type="text" id="chartDesigner0" placeholder="Chart Designer">
+            <br>
+            <input type="text" id="jacketDesigner0" placeholder="Jacket Designer">
+            <br>
+            <a>Difficulty: 1</a>
+            <br>
+            <input type="text" id="rating1" placeholder="Rating">
+            <br>
+            <input type="text" id="chartDesigner1" placeholder="Chart Designer">
+            <br>
+            <input type="text" id="jacketDesigner1" placeholder="Jacket Designer">
+            <br>
+            <a>Difficulty: 2</a>
+            <br>
+            <input type="text" id="rating2" placeholder="Rating">
+            <br>
+            <input type="text" id="chartDesigner2" placeholder="Chart Designer">
+            <br>
+            <input type="text" id="jacketDesigner2" placeholder="Jacket Designer">
+            <br>
+            <a>Difficulty: 3 or 4</a>
+            <br>
+            <input type="text" id="ratingClass3" placeholder="Rating Class 3 or 4">
+            <br>
+            <input type="text" id="rating3" placeholder="Rating">
+            <br>
+            <input type="text" id="chartDesigner3" placeholder="Chart Designer">
+            <br>
+            <input type="text" id="jacketDesigner3" placeholder="Jacket Designer">
+            <br>
+        </div>
+    </div>
+    <button onclick="addSong()">Add Song</button>
+    <ul id="songList">
+        <!-- Danh sách các bài hát sẽ được liệt kê ở đây -->
+    </ul>
+    <h3>JSON Output:</h3>
+    <pre id="jsonOutput">{}</pre>
+    <!-- Button "Copy" để sao chép JSON output -->
+    <button onclick="copyJson()">Copy</button>
+
+    <script src="script-gen.js"></script>
+</body>
+</html>

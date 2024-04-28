@@ -21,25 +21,30 @@ function addSong() {
     var bg = document.getElementById("newBg").value;
     var bg_inverse = document.getElementById("newBgInverse").value;
     var date = document.getElementById("newDate").value;
+    var remote_dl = document.getElementById("remote_dl").checked;
     var version = document.getElementById("newVersion").value;
 
     // Lấy thông tin về khó khăn từ các trường input
-    var rating0 = document.getElementById("rating0").value;
+    var rating0 = parseInt(document.getElementById("rating0").value);
     var chartDesigner0 = document.getElementById("chartDesigner0").value;
     var jacketDesigner0 = document.getElementById("jacketDesigner0").value;
+    var ratingPlus0 = document.getElementById("ratingPlus0").checked; // Lấy giá trị của checkbox
 
-    var rating1 = document.getElementById("rating1").value;
+    var rating1 = parseInt(document.getElementById("rating1").value);
     var chartDesigner1 = document.getElementById("chartDesigner1").value;
     var jacketDesigner1 = document.getElementById("jacketDesigner1").value;
+    var ratingPlus1 = document.getElementById("ratingPlus1").checked; // Lấy giá trị của checkbox
 
-    var rating2 = document.getElementById("rating2").value;
+    var rating2 = parseInt(document.getElementById("rating2").value);
     var chartDesigner2 = document.getElementById("chartDesigner2").value;
     var jacketDesigner2 = document.getElementById("jacketDesigner2").value;
+    var ratingPlus2 = document.getElementById("ratingPlus2").checked; // Lấy giá trị của checkbox
 
-    var ratingClass3 = document.getElementById("ratingClass3").value;
-    var rating3 = document.getElementById("rating3").value;
+    var ratingClass3 = parseInt(document.getElementById("ratingClass3").value);
+    var rating3 = parseInt(document.getElementById("rating3").value);
     var chartDesigner3 = document.getElementById("chartDesigner3").value;
     var jacketDesigner3 = document.getElementById("jacketDesigner3").value;
+    var ratingPlus3 = document.getElementById("ratingPlus3").checked; // Lấy giá trị của checkbox
 
     // Tạo một đối tượng JSON mới chứa thông tin về bài hát
     var newSong = {
@@ -60,6 +65,7 @@ function addSong() {
         "bg": bg,
         "bg_inverse": bg_inverse,
         "date": date,
+        "remote_dl": remote_dl,
         "version": version,
         "difficulties": [
             {
@@ -89,8 +95,14 @@ function addSong() {
         ]
     };
 
+    // Thêm trường "ratingPlus" chỉ khi nó khác false
+    if (ratingPlus0) newSong.difficulties[0].ratingPlus = true;
+    if (ratingPlus1) newSong.difficulties[1].ratingPlus = true;
+    if (ratingPlus2) newSong.difficulties[2].ratingPlus = true;
+    if (ratingPlus3) newSong.difficulties[3].ratingPlus = true;
+
     // Kiểm tra và loại bỏ thông tin về các khó khăn nếu không được nhập vào
-    if (rating3.trim() === '' && chartDesigner3.trim() === '' && jacketDesigner3.trim() === '') {
+    if (jacketDesigner3.trim() === '') {
         newSong.difficulties.pop(); // Loại bỏ phần tử cuối cùng khỏi mảng difficulties
     }
 

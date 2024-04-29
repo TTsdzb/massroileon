@@ -161,7 +161,6 @@ function editSong(index) {
     document.getElementById("newAudioPreview").value = song.audioPreview || "";
     document.getElementById("newAudioPreviewEnd").value = song.audioPreviewEnd || "";
     document.getElementById("newSide").value = song.side !== undefined ? song.side : "";
-    console.log(song.side);
     document.getElementById("newBg").value = song.bg || "";
     document.getElementById("newBgInverse").value = song.bg_inverse || "";
     document.getElementById("remote_dl").checked = song.remote_dl || false;
@@ -183,8 +182,10 @@ function editSong(index) {
     // Kiểm tra nếu ratingClass là 3 hoặc 4, thêm thông tin tương ứng
     if (difficulty.ratingClass === 3) {
         document.getElementById("ratingClass3").value = difficulty.ratingClass || "";
-    } else if (difficulty.ratingClass === 4) {
-        document.getElementById("ratingClass4").value = difficulty.ratingClass || "";
+    }
+    if (difficulty.ratingClass === 4) {
+        document.getElementById("ratingClass3").value = difficulty.ratingClass || "";
+        console.log(difficulty.ratingClass);
     }
 });
 

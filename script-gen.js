@@ -114,7 +114,7 @@ function addSong() {
     if (audioOverride) newSong.difficulties[3].audioOverride = true;
 
     // Kiểm tra và loại bỏ thông tin về các khó khăn nếu không được nhập vào
-    if (rating3.trim() === null) {
+    if (rating3.trim() !== null) {
         newSong.difficulties.pop(); // Loại bỏ phần tử cuối cùng khỏi mảng difficulties
     }
 

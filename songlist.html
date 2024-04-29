@@ -8,8 +8,8 @@
         /* Định dạng CSS cho giao diện người dùng */
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px 20px;
+            padding: 40px;
+            overflow: auto;
         }
         h2 {
             margin-bottom: 10px;
@@ -20,7 +20,7 @@
         input[type="text"],
         input[type="number"],
         textarea {
-            width: 100%;
+            width: 98%;
             padding: 5px;
             margin-bottom: 10px;
         }
@@ -41,6 +41,13 @@
         li {
             margin-bottom: 10px;
         }
+        .diff {
+            border: #000 solid 1px;
+            border-radius: 20px;
+            text-align: center;
+            padding: 10px;
+        }
+
         #jsonOutput {
             border: 1px solid #ccc;
             padding: 10px;
@@ -49,14 +56,12 @@
     </style>
 </head>
 <body>
-    <h2>Song List Maker<br>Ver: 0.0.2beta</h2>
+    <h2>Song List Maker<br>Ver: 0.0.5 Beta</h2>
     <!-- Phần thông tin bài hát -->
     <div class="container">
         <div class="column">
-            <label for="toggleIdx">Enable idx:</label>
-            <input type="checkbox" id="toggleIdx" onchange="toggleIdxField()">
-            <br>
-            <input type="text" id="newIdx" placeholder="Idx">
+            <div class="diff">
+            <input type="text" id="newIdx" placeholder="Idx ( Can forgot )">
             <br>
             <input type="text" id="newId" placeholder="Id song">
             <br>
@@ -84,66 +89,70 @@
             <br>
             <input type="text" id="newBgInverse" placeholder="Bg inverse">
             <br>
-            <input type="text" id="newDate" placeholder="Date ( dd/mm/yy )">
+            <input type="text" id="newDate" placeholder="Date ( dd/mm/yyyy )">
             <br>
             <label for="remote_dl">Remote_dl:</label>
             <input type="checkbox" id="remote_dl" name="remote_dl"><br>
+            <br>
             <input type="text" id="newSourceEn" placeholder="Source Location (en)">
             <br>
             <input type="text" id="source_copyright" placeholder="Source Copyright">
             <br>
             <input type="text" id="newVersion" placeholder="Version">
-            <br>
+        </div><br>
         </div>
         <!-- Phần thông tin khó khăn -->
         <div class="column">   
             <!-- Đầu vào cho các thông tin khó khăn -->
-            <a>Difficulty: 0</a>
-            <br>
-            <input type="text" id="rating0" placeholder="Rating">
-            <br>
-            <input type="text" id="chartDesigner0" placeholder="Chart Designer">
-            <br>
-            <input type="text" id="jacketDesigner0" placeholder="Jacket Designer">
-            <br>
-            <label for="ratingPlus0">Rating Plus:</label>
-            <input type="checkbox" id="ratingPlus0" name="ratingPlus0"><br>
-            <a>Difficulty: 1</a>
-            <br>
-            <input type="text" id="rating1" placeholder="Rating">
-            <br>
-            <input type="text" id="chartDesigner1" placeholder="Chart Designer">
-            <br>
-            <input type="text" id="jacketDesigner1" placeholder="Jacket Designer">
-            <br>
-            <label for="ratingPlus1">Rating Plus:</label>
-            <input type="checkbox" id="ratingPlus1" name="ratingPlus1"><br>
-            <a>Difficulty: 2</a>
-            <br>
-            <input type="text" id="rating2" placeholder="Rating">
-            <br>
-            <input type="text" id="chartDesigner2" placeholder="Chart Designer">
-            <br>
-            <input type="text" id="jacketDesigner2" placeholder="Jacket Designer">
-            <br>
-            <label for="ratingPlus2">Rating Plus:</label>
-            <input type="checkbox" id="ratingPlus2" name="ratingPlus2"><br>
-            <a>Difficulty: 3 or 4</a>
-            <br>
-            <input type="text" id="ratingClass3" placeholder="Rating Class 3 or 4">
-            <br>
-            <input type="text" id="rating3" placeholder="Rating ( Need fill to Active )">
-            <br>
-            <input type="text" id="chartDesigner3" placeholder="Chart Designer">
-            <br>
-            <input type="text" id="jacketDesigner3" placeholder="Jacket Designer">
-            <br>
-            <label for="ratingPlus3">Rating Plus:</label>
-            <input type="checkbox" id="ratingPlus3" name="ratingPlus3"><br>
-            <label for="jacketOverride">Jacket Override:</label>
-            <input type="checkbox" id="jacketOverride" name="jacketOverride"><br>
-            <label for="audioOverride">Audio Override:</label>
-            <input type="checkbox" id="audioOverride" name="audioOverride"><br>
+            <div class="diff">
+                <a>Difficulty: PAST</a>
+                <br>
+                <input type="text" id="rating0" placeholder="Rating">
+                <br>
+                <input type="text" id="chartDesigner0" placeholder="Chart Designer">
+                <br>
+                <input type="text" id="jacketDesigner0" placeholder="Jacket Designer">
+                <br>
+                <label for="ratingPlus0">Rating Plus:</label>
+                <input type="checkbox" id="ratingPlus0" name="ratingPlus0"><br><br></div><br>
+            <div class="diff">
+                <a>Difficulty: PRESENT</a>
+                <br>
+                <input type="text" id="rating1" placeholder="Rating">
+                <br>
+                <input type="text" id="chartDesigner1" placeholder="Chart Designer">
+                <br>
+                <input type="text" id="jacketDesigner1" placeholder="Jacket Designer">
+                <br>
+                <label for="ratingPlus1">Rating Plus:</label>
+                <input type="checkbox" id="ratingPlus1" name="ratingPlus1"><br><br></div><br>
+            <div class="diff">
+                <a>Difficulty: FUTURE</a>
+                <br>
+                <input type="text" id="rating2" placeholder="Rating">
+                <br>
+                <input type="text" id="chartDesigner2" placeholder="Chart Designer">
+                <br>
+                <input type="text" id="jacketDesigner2" placeholder="Jacket Designer">
+                <br>
+                <label for="ratingPlus2">Rating Plus:</label>
+                <input type="checkbox" id="ratingPlus2" name="ratingPlus2"><br><br></div><br>
+            <div class="diff">
+                <a>Difficulty: BEYOND or ETERNAL</a>
+                <input type="text" id="ratingClass3" placeholder="Rating Class 3 or 4">
+                <br>
+                <input type="text" id="rating3" placeholder="Rating ( Need fill to Active )">
+                <br>
+                <input type="text" id="chartDesigner3" placeholder="Chart Designer">
+                <br>
+                <input type="text" id="jacketDesigner3" placeholder="Jacket Designer">
+                <br>
+                <label for="ratingPlus3">Rating Plus:</label>
+                <input type="checkbox" id="ratingPlus3" name="ratingPlus3"><br>
+                <label for="jacketOverride">Jacket Override:</label>
+                <input type="checkbox" id="jacketOverride" name="jacketOverride"><br>
+                <label for="audioOverride">Audio Override:</label>
+                <input type="checkbox" id="audioOverride" name="audioOverride"><br><br></div><br>
         </div>
     </div>
     <button onclick="addSong()">Add Song</button>

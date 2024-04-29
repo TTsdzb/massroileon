@@ -114,9 +114,10 @@ function addSong() {
     if (audioOverride) newSong.difficulties[3].audioOverride = true;
 
     // Kiểm tra và loại bỏ thông tin về các khó khăn nếu không được nhập vào
-    if (jacketDesigner3.trim() === '') {
-newSong.difficulties.pop(); // Loại bỏ phần tử cuối cùng khỏi mảng difficulties
+if (rating3 === null || isNaN(rating3)) {
+    newSong.difficulties.pop(); // Loại bỏ phần tử cuối cùng khỏi mảng difficulties
 }
+
 
 
     // Tạo một đối tượng chứa chỉ trường "idx" nếu giá trị khác null

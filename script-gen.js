@@ -338,19 +338,19 @@ function displaySongs() {
         li.textContent = "Song: " + song.title_localized.en + "  ";
 
         // Tạo một nút xóa cho mỗi mục và gắn nó với hàm xóa tương ứng
-        var deleteButton = document.createElement("button");
+        var deleteButton = document.createElement("button2");
         deleteButton.textContent = "Delete";
         deleteButton.onclick = function() {
             deleteSong(index);
         };
 
-        var editButton = document.createElement("button");
+        var editButton = document.createElement("button2");
         editButton.textContent = "Edit";
         editButton.onclick = function() {
             editSong(index);
         };
 
-        var changeButton = document.createElement("button");
+        var changeButton = document.createElement("button2");
         changeButton.textContent = "Change";
         changeButton.onclick = function() {
             changeSong(index);
@@ -363,6 +363,10 @@ function displaySongs() {
 
         // Thêm phần tử li vào danh sách
         ul.appendChild(li);
+
+        // Tạo thẻ br để ngắt dòng sau mỗi mục danh sách
+        var lineBreak = document.createElement("br");
+        ul.appendChild(lineBreak);
     });
 
     // Cập nhật dữ liệu JSON output

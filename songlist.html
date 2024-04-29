@@ -33,6 +33,17 @@
             cursor: pointer;
             float: right;
         }
+        button2 {
+            padding: 8px 8px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            float: right;
+        }
+        button2:hover {
+            background-color: #0056b3;
+        }
         button:hover {
             background-color: #0056b3;
         }
@@ -41,7 +52,9 @@
             padding: 0;
         }
         li {
+            font-size: 14px;
             margin-bottom: 10px;
+            display: block;
         }
         .diff {
             border: #000 solid 1px;
@@ -179,6 +192,7 @@
     <ul id="songList" class="songList">
         <!-- Danh sách các bài hát sẽ được liệt kê ở đây -->
     </ul>
+    <br>
     <!-- HTML -->
     <input type="file" id="songListFileInput" accept=".json" style="display: none;" onchange="importSongList()">
     <label class="jsonimport" for="songListFileInput">Import JSON - Click</label>

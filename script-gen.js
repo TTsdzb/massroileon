@@ -16,12 +16,12 @@ function addSong() {
     var bpm_base = parseInt(document.getElementById("newBpmBase").value);
     var set = document.getElementById("newSet").value;
     var purchase = document.getElementById("newPurchase").value;
-    var audioPreview = parseInt(document.getElementById("newAudioPreview").value);
-    var audioPreviewEnd = parseInt(document.getElementById("newAudioPreviewEnd").value);
-    var side = parseInt(document.getElementById("newSide").value);
+    var audioPreview = document.getElementById("newAudioPreview").value;
+    var audioPreviewEnd = document.getElementById("newAudioPreviewEnd").value;
+    var side = document.getElementById("newSide").value;
     var bg = document.getElementById("newBg").value;
     var bg_inverse = document.getElementById("newBgInverse").value;
-    var date = parseInt(document.getElementById("newDate").value);
+    var date = document.getElementById("newDate").value;
     var remote_dl = document.getElementById("remote_dl").checked;
     var source_en = document.getElementById("newSourceEn").value;
     var source_copyright = document.getElementById("source_copyright").value;

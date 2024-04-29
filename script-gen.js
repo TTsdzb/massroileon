@@ -6,6 +6,8 @@ var songList = {
 // Hàm thêm bài hát
 function addSong() {
     // Lấy thông tin về bài hát từ các trường input
+    var idxValue = document.getElementById("newIdx").value.trim();
+    var idx = idxValue !== "" ? parseInt(idxValue) : null;
     var id = document.getElementById("newId").value;
     var titleEn = document.getElementById("newTitleEn").value;
     var titleJp = document.getElementById("newTitleJp").value;
@@ -36,8 +38,7 @@ function addSong() {
     // Chuyển đổi đối tượng Date thành timestamp Unix 10 số
     var timestamp = Math.floor(dateObject.getTime() / 1000);
 
-
-    // Tạo một đối tượng JSON mới chứa thông tin về bài hát
+// Tạo một đối tượng JSON mới chứa thông tin về bài hát
     var newSong = {
         "id": id,
         "title_localized": {
@@ -86,6 +87,8 @@ function addSong() {
         newSong.difficulties.push(difficulty);
     }
 
+    
+
     // Kiểm tra và loại bỏ thông tin về các khó khăn nếu không được nhập vào
     if (isNaN(newSong.difficulties[3].rating) || newSong.difficulties[3].rating === null) {
         newSong.difficulties.pop(); // Loại bỏ phần tử cuối cùng khỏi mảng difficulties 
@@ -99,8 +102,14 @@ function addSong() {
         newSong.difficulties[3].audioOverride = true;
     }
 
+    // Tạo một đối tượng chứa chỉ trường "idx" nếu giá trị khác null
+    var idxObject = idx !== null ? {"idx": idx} : {};
+
+    // Kết hợp đối tượng chứa thông tin bài hát và đối tượng chứa trường "idx"
+    var finalSongObject = {...idxObject, ...newSong};
+
     // Thêm bài hát mới vào danh sách
-    songList.songs.push(newSong);
+    songList.songs.push(finalSongObject);
 
     // Hiển thị lại danh sách bài hát và cập nhật JSON output
     displaySongs();
@@ -109,12 +118,27 @@ function addSong() {
     clearInputFields();
 }
 
+function formatDate(dateString) {
+    var dateParts = dateString.split("-");
+    return dateParts[2] + "/" + dateParts[1] + "/" + dateParts[0];
+}
+
+function formatDateFromTimestamp(timestamp) {
+    var date = new Date(timestamp * 1000);
+    var year = date.getFullYear();
+    var month = String(date.getMonth() + 1).padStart(2, '0');
+    var day = String(date.getDate()).padStart(2, '0');
+    return day + "/" + month + "/" + year;
+}
+
+
     // Hàm sửa bài hát
     function editSong(index) {
     // Lấy thông tin bài hát cần chỉnh sửa từ mảng songList
     var song = songList.songs[index];
 
     // Hiển thị giao diện sửa đổi với các trường input được điền với thông tin hiện tại của bài hát
+    document.getElementById("newIdx").value = song.idx;
     document.getElementById("newId").value = song.id;
     document.getElementById("newTitleEn").value = song.title_localized.en;
     document.getElementById("newTitleJp").value = song.title_localized.jp;
@@ -131,6 +155,7 @@ function addSong() {
     document.getElementById("remote_dl").checked = song.remote_dl;
     document.getElementById("newSourceEn").value = song.source_localized.en;
     document.getElementById("source_copyright").value = song.source_copyright;
+    document.getElementById("newDate").value = formatDateFromTimestamp(song.date);
     document.getElementById("newVersion").value = song.version;
 
 // Lặp qua mảng difficulties và điền thông tin vào các trường input tương ứng
@@ -147,6 +172,8 @@ song.difficulties.forEach(function(difficulty, i) {
 // Hàm cập nhật bài hát sau khi chỉnh sửa
 function changeSong(index) {
     // Lấy thông tin bài hát từ các trường input
+    var idxValue = document.getElementById("newIdx").value.trim();
+    var idx = idxValue !== "" ? parseInt(idxValue) : null;
     var id = document.getElementById("newId").value;
     var titleEn = document.getElementById("newTitleEn").value;
     var titleJp = document.getElementById("newTitleJp").value;
@@ -240,8 +267,14 @@ function changeSong(index) {
         updatedSong.difficulties[3].audioOverride = true;
     }
 
+    // Tạo một đối tượng chứa chỉ trường "idx" nếu giá trị khác null và không phải NaN
+    var idxObject = !isNaN(idx) && idx !== null ? {"idx": idx} : {};
+
+    // Kết hợp đối tượng chứa thông tin bài hát và đối tượng chứa trường "idx"
+    var finalSongObject = {...idxObject, ...updatedSong};
+
     // Cập nhật thông tin bài hát trong mảng songList
-    songList.songs[index] = updatedSong;
+    songList.songs[index] = finalSongObject;
 
     // Hiển thị lại danh sách bài hát và cập nhật JSON output
     displaySongs();
@@ -249,6 +282,7 @@ function changeSong(index) {
     // Xóa dữ liệu trong các trường input sau khi thêm bài hát
     clearInputFields();
 }
+
 
 // Hàm xóa dữ liệu trong các trường input
 function clearInputFields() {
@@ -371,4 +405,3 @@ function importSongList() {
         alert('Vui lòng chọn một file để import.');
     }
 }
-

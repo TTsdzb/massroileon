@@ -1,3 +1,12 @@
+function splitString(stringToSplit) {
+    var arrayOfStrings = stringToSplit.split('","');
+    // Loại bỏ dấu ngoặc kép từ các phần tử ở đầu và cuối mảng
+    arrayOfStrings[0] = arrayOfStrings[0].replace('"', '');
+    var lastIndex = arrayOfStrings.length - 1;
+    arrayOfStrings[lastIndex] = arrayOfStrings[lastIndex].replace('"', '');
+    return arrayOfStrings;
+}
+
 // Khai báo một biến global để lưu trữ danh sách các bài hát
 var songList = {
     "songs": []
@@ -10,8 +19,10 @@ function addSong() {
     var idx = idxValue !== "" ? parseInt(idxValue) : null;
     var id = document.getElementById("newId").value;
     var titleEn = document.getElementById("newTitleEn").value;
-    var titleJp = document.getElementById("newTitleJp").value;
+    var titleJa = document.getElementById("newTitleJa").value;
     var artist = document.getElementById("newArtist").value;
+    var searchJa = document.getElementById("newSearchJa").value;
+    var searchKo = document.getElementById("newSearchKo").value;
     var bpm = parseInt(document.getElementById("newBpm").value);
     var bpm_base = parseInt(document.getElementById("newBpmBase").value);
     var set = document.getElementById("newSet").value;
@@ -26,6 +37,22 @@ function addSong() {
     var source_en = document.getElementById("newSourceEn").value;
     var source_copyright = document.getElementById("source_copyright").value;
     var version = document.getElementById("newVersion").value;
+
+   // Chuyển đổi searchJa thành mảng các giá trị đã được tách ra và loại bỏ khoảng trắng thừa
+    var searchJaArray = searchJa.split(',').map(function(item) {
+        return item.trim();
+    });
+
+    // Tạo chuỗi JSON từ mảng searchJaArray
+    var jaString = '"ja": [\n    "' + searchJaArray.join('",\n    "') + '"\n]';
+
+    // Chuyển đổi searchKo thành mảng các giá trị đã được tách ra và loại bỏ khoảng trắng thừa
+    var searchKoArray = searchKo.split(',').map(function(item) {
+        return item.trim();
+    });
+
+    // Tạo chuỗi JSON từ mảng searchKoArray
+    var koString = '"ko": [\n    "' + searchKoArray.join('",\n    "') + '"\n]';
 
     var dateString = document.getElementById("newDate").value;
     var dateParts = dateString.split("/");
@@ -50,9 +77,13 @@ function addSong() {
         "id": id,
         "title_localized": {
             "en": titleEn,
-            "jp": titleJp
+            "ja": titleJa
         },
         "artist": artist,
+        "search_title": {
+            "ja": searchJaArray,
+            "ko": searchKoArray
+        },
         "bpm": bpm,
         "bpm_base": bpm_base,
         "set": set,
@@ -95,7 +126,30 @@ function addSong() {
         newSong.difficulties.push(difficulty);
     }
 
-    
+    // Lấy giá trị của background từ trường input newBg3
+    var bg = document.getElementById("newBg3").value;
+
+    // Kiểm tra xem bg có giá trị không
+    if (bg && bg.trim() !== "") {
+        // Nếu bg có giá trị, gán nó cho thuộc tính bg của difficulties[3]
+        newSong.difficulties[3].bg = bg;
+    } else {
+        // Nếu không có giá trị bg, xóa thuộc tính bg khỏi difficulties[3]
+        delete newSong.difficulties[3].bg;
+    }
+
+    // Lấy giá trị của version từ trường input newVersion3
+    var version = document.getElementById("newVersion3").value;
+
+    // Kiểm tra xem bg có giá trị không
+    if (version && version.trim() !== "") {
+        // Nếu bg có giá trị, gán nó cho thuộc tính bg của difficulties[3]
+        newSong.difficulties[3].version = version;
+    } else {
+        // Nếu không có giá trị bg, xóa thuộc tính bg khỏi difficulties[3]
+        delete newSong.difficulties[3].version;
+    }
+
 
     // Kiểm tra và loại bỏ thông tin về các khó khăn nếu không được nhập vào
     if (isNaN(newSong.difficulties[3].rating) || newSong.difficulties[3].rating === null) {
@@ -154,8 +208,11 @@ function editSong(index) {
     document.getElementById("newIdx").value = song.idx !== undefined ? song.side : "";
     document.getElementById("newId").value = song.id || "";
     document.getElementById("newTitleEn").value = song.title_localized.en || "";
-    document.getElementById("newTitleJp").value = song.title_localized.jp || "";
+    document.getElementById("newTitleJa").value = song.title_localized.ja || "";
     document.getElementById("newArtist").value = song.artist || "";
+    document.getElementById("newSearchJa").value = song.search_title.ja.join(', ');
+    console.log(song);
+    document.getElementById("newSearchKo").value = song.search_title.ko.join(', ');
     document.getElementById("newBpm").value = song.bpm || "";
     document.getElementById("newBpmBase").value = song.bpm_base || "";
     document.getElementById("newSet").value = song.set || "";
@@ -181,7 +238,9 @@ function editSong(index) {
     document.getElementById("rating" + i).value = difficulty.rating || "";
     document.getElementById("chartDesigner" + i).value = difficulty.chartDesigner || "";
     document.getElementById("jacketDesigner" + i).value = difficulty.jacketDesigner || "";
-    
+    document.getElementById("newBg3").value = difficulty.bg || "";
+    document.getElementById("newVersion3").value = difficulty.version || "";
+
     // Kiểm tra nếu ratingClass là 3 hoặc 4, thêm thông tin tương ứng
     if (difficulty.ratingClass === 3) {
         document.getElementById("ratingClass3").value = difficulty.ratingClass || "";
@@ -205,8 +264,10 @@ function changeSong(index) {
     var idx = idxValue !== "" ? parseInt(idxValue) : null;
     var id = document.getElementById("newId").value;
     var titleEn = document.getElementById("newTitleEn").value;
-    var titleJp = document.getElementById("newTitleJp").value;
+    var titleJa = document.getElementById("newTitleJa").value;
     var artist = document.getElementById("newArtist").value;
+    var searchJa = document.getElementById("newSearchJa").value;
+    var searchKo = document.getElementById("newSearchKo").value;
     var bpm = parseInt(document.getElementById("newBpm").value);
     var bpm_base = parseInt(document.getElementById("newBpmBase").value);
     var set = document.getElementById("newSet").value;
@@ -221,6 +282,22 @@ function changeSong(index) {
     var source_en = document.getElementById("newSourceEn").value;
     var source_copyright = document.getElementById("source_copyright").value;
     var version = document.getElementById("newVersion").value;
+
+    // Chuyển đổi searchJa thành mảng các giá trị đã được tách ra và loại bỏ khoảng trắng thừa
+    var searchJaArray = searchJa.split(',').map(function(item) {
+        return item.trim();
+    });
+
+    // Tạo chuỗi JSON từ mảng searchJaArray
+    var jaString = '"ja": [\n    "' + searchJaArray.join('",\n    "') + '"\n]';
+
+    // Chuyển đổi searchKo thành mảng các giá trị đã được tách ra và loại bỏ khoảng trắng thừa
+    var searchKoArray = searchKo.split(',').map(function(item) {
+        return item.trim();
+    });
+
+    // Tạo chuỗi JSON từ mảng searchJaArray
+    var koString = '"ko": [\n    "' + searchKoArray.join('",\n    "') + '"\n]';
 
     var dateString = document.getElementById("newDate").value;
     var dateParts = dateString.split("/");
@@ -246,9 +323,13 @@ function changeSong(index) {
         "id": id,
         "title_localized": {
             "en": titleEn,
-            "jp": titleJp
+            "ja": titleJa
         },
         "artist": artist,
+        "search_title": {
+            "ja": searchJaArray,
+            "ko": searchKoArray
+        },
         "bpm": bpm,
         "bpm_base": bpm_base,
         "set": set,
@@ -289,6 +370,30 @@ function changeSong(index) {
         }
 
         updatedSong.difficulties.push(difficulty);
+    }
+
+    // Lấy giá trị của background từ trường input newBg3
+    var bg = document.getElementById("newBg3").value;
+
+    // Kiểm tra xem bg có giá trị không
+    if (bg && bg.trim() !== "") {
+        // Nếu bg có giá trị, gán nó cho thuộc tính bg của difficulties[3]
+        newSong.difficulties[3].bg = bg;
+    } else {
+        // Nếu không có giá trị bg, xóa thuộc tính bg khỏi difficulties[3]
+        delete newSong.difficulties[3].bg;
+    }
+
+    // Lấy giá trị của version từ trường input newVersion3
+    var version = document.getElementById("newVersion3").value;
+
+    // Kiểm tra xem bg có giá trị không
+    if (version && version.trim() !== "") {
+        // Nếu bg có giá trị, gán nó cho thuộc tính bg của difficulties[3]
+        newSong.difficulties[3].version = version;
+    } else {
+        // Nếu không có giá trị bg, xóa thuộc tính bg khỏi difficulties[3]
+        delete newSong.difficulties[3].version;
     }
 
     // Kiểm tra và loại bỏ thông tin về các khó khăn nếu không được nhập vào

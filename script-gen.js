@@ -51,6 +51,21 @@ function addSong() {
     var jacketOverride = document.getElementById("jacketOverride").checked;
     var audioOverride = document.getElementById("audioOverride").checked;
 
+    var dateString = document.getElementById("newDate").value;
+    var dateParts = dateString.split("/");
+    var year = parseInt(dateParts[2]);
+    var month = parseInt(dateParts[1]) - 1; // JavaScript đếm tháng từ 0 đến 11
+    var day = parseInt(dateParts[0]);
+
+// Chuyển đổi đối tượng Date thành timestamp
+    var timestamp = dateObject.getTime();
+
+
+
+// Tạo một đối tượng Date từ các phần tử ngày, tháng và năm
+var dateObject = new Date(year, month, day);
+
+
 
     // Tạo một đối tượng JSON mới chứa thông tin về bài hát
     var newSong = {
@@ -69,7 +84,7 @@ function addSong() {
         "side": side,
         "bg": bg,
         "bg_inverse": bg_inverse,
-        "date": date,
+        "date": timestamp,
         "remote_dl": remote_dl,
         "source_localized": {
             "en": source_en

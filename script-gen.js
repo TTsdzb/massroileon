@@ -26,45 +26,17 @@ function addSong() {
     var source_copyright = document.getElementById("source_copyright").value;
     var version = document.getElementById("newVersion").value;
 
-    // Lấy thông tin về khó khăn từ các trường input
-    var rating0 = parseInt(document.getElementById("rating0").value);
-    var chartDesigner0 = document.getElementById("chartDesigner0").value;
-    var jacketDesigner0 = document.getElementById("jacketDesigner0").value;
-    var ratingPlus0 = document.getElementById("ratingPlus0").checked; // Lấy giá trị của checkbox
-
-    var rating1 = parseInt(document.getElementById("rating1").value);
-    var chartDesigner1 = document.getElementById("chartDesigner1").value;
-    var jacketDesigner1 = document.getElementById("jacketDesigner1").value;
-    var ratingPlus1 = document.getElementById("ratingPlus1").checked; // Lấy giá trị của checkbox
-
-    var rating2 = parseInt(document.getElementById("rating2").value);
-    var chartDesigner2 = document.getElementById("chartDesigner2").value;
-    var jacketDesigner2 = document.getElementById("jacketDesigner2").value;
-    var ratingPlus2 = document.getElementById("ratingPlus2").checked; // Lấy giá trị của checkbox
-
-    var ratingClass3 = parseInt(document.getElementById("ratingClass3").value);
-    var rating3 = parseInt(document.getElementById("rating3").value);
-    var chartDesigner3 = document.getElementById("chartDesigner3").value;
-    var jacketDesigner3 = document.getElementById("jacketDesigner3").value;
-    var ratingPlus3 = document.getElementById("ratingPlus3").checked; // Lấy giá trị của checkbox
-    var jacketOverride = document.getElementById("jacketOverride").checked;
-    var audioOverride = document.getElementById("audioOverride").checked;
-
     var dateString = document.getElementById("newDate").value;
     var dateParts = dateString.split("/");
     var year = parseInt(dateParts[2]);
     var month = parseInt(dateParts[1]) - 1; // JavaScript đếm tháng từ 0 đến 11
     var day = parseInt(dateParts[0]);
 
-// Chuyển đổi đối tượng Date thành timestamp
+    // Tạo một đối tượng Date từ các phần tử ngày, tháng và năm
+    var dateObject = new Date(year, month, day);
+
+    // Chuyển đổi đối tượng Date thành timestamp
     var timestamp = dateObject.getTime();
-
-
-
-// Tạo một đối tượng Date từ các phần tử ngày, tháng và năm
-var dateObject = new Date(year, month, day);
-
-
 
     // Tạo một đối tượng JSON mới chứa thông tin về bài hát
     var newSong = {
@@ -87,52 +59,46 @@ var dateObject = new Date(year, month, day);
         "remote_dl": remote_dl,
         "source_localized": {
             "en": source_en
-          },
+        },
         "source_copyright": source_copyright,
         "version": version,
-        "difficulties": [
-            {
-                "ratingClass": 0,
-                "chartDesigner": chartDesigner0,
-                "jacketDesigner": jacketDesigner0,
-                "rating": rating0
-            },
-            {
-                "ratingClass": 1,
-                "chartDesigner": chartDesigner1,
-                "jacketDesigner": jacketDesigner1,
-                "rating": rating1
-            },
-            {
-                "ratingClass": 2,
-                "chartDesigner": chartDesigner2,
-                "jacketDesigner": jacketDesigner2,
-                "rating": rating2
-            },
-            {
-                "ratingClass": ratingClass3,
-                "chartDesigner": chartDesigner3,
-                "jacketDesigner": jacketDesigner3,
-                "rating": rating3
-            }
-        ]
+        "difficulties": []
     };
 
-    // Thêm trường "ratingPlus" chỉ khi nó khác false
-    if (ratingPlus0) newSong.difficulties[0].ratingPlus = true;
-    if (ratingPlus1) newSong.difficulties[1].ratingPlus = true;
-    if (ratingPlus2) newSong.difficulties[2].ratingPlus = true;
-    if (ratingPlus3) newSong.difficulties[3].ratingPlus = true;
+    // Thêm thông tin về các khó khăn vào mảng "difficulties"
+    for (var i = 0; i <= 3; i++) {
+        var ratingValue = parseInt(document.getElementById("rating" + i).value);
+        var chartDesigner = document.getElementById("chartDesigner" + i).value;
+        var jacketDesigner = document.getElementById("jacketDesigner" + i).value;
+        var ratingPlus = document.getElementById("ratingPlus" + i).checked;
+        var ratingClass = i === 3 ? parseInt(document.getElementById("ratingClass3").value) : i;
 
-    if (jacketOverride) newSong.difficulties[3].jacketOverride = true;
-    if (audioOverride) newSong.difficulties[3].audioOverride = true;
+        var difficulty = {
+            "ratingClass": ratingClass,
+            "chartDesigner": chartDesigner,
+            "jacketDesigner": jacketDesigner,
+            "rating": ratingValue
+        };
+
+        if (ratingPlus) {
+            difficulty.ratingPlus = true;
+        }
+
+        newSong.difficulties.push(difficulty);
+    }
 
     // Kiểm tra và loại bỏ thông tin về các khó khăn nếu không được nhập vào
-if (rating3 === null || isNaN(rating3)) {
-    newSong.difficulties.pop(); // Loại bỏ phần tử cuối cùng khỏi mảng difficulties 
-}
+    if (isNaN(newSong.difficulties[3].rating) || newSong.difficulties[3].rating === null) {
+        newSong.difficulties.pop(); // Loại bỏ phần tử cuối cùng khỏi mảng difficulties 
+    }
 
+    if (document.getElementById("jacketOverride").checked) {
+        newSong.difficulties[3].jacketOverride = true;
+    }
 
+    if (document.getElementById("audioOverride").checked) {
+        newSong.difficulties[3].audioOverride = true;
+    }
 
     // Tạo một đối tượng chứa chỉ trường "idx" nếu giá trị khác null
     var idxObject = idx !== null ? {"idx": idx} : {};
@@ -177,52 +143,3 @@ function displaySongs() {
 
     // Xóa tất cả các phần tử con của ul trước khi hiển thị lại
     ul.innerHTML = "";
-
-    // Duyệt qua mảng các bài hát và thêm chúng vào danh sách
-    songList.songs.forEach(function(song, index) {
-        var li = document.createElement("li");
-        li.textContent = "Song: " + song.title_localized.en;
-
-        // Tạo một nút xóa cho mỗi mục và gắn nó với hàm xóa tương ứng
-        var deleteButton = document.createElement("button");
-        deleteButton.textContent = "Delete";
-        deleteButton.onclick = function() {
-            deleteSong(index);
-        };
-
-        // Thêm nút xóa vào phần tử li
-        li.appendChild(deleteButton);
-
-        // Thêm phần tử li vào danh sách
-        ul.appendChild(li);
-    });
-
-    // Cập nhật dữ liệu JSON output
-    var jsonOutput = document.getElementById("jsonOutput");
-    jsonOutput.textContent = JSON.stringify(songList, null, 2);
-}
-
-// Hàm xóa một bài hát
-function deleteSong(index) {
-    // Xóa một mục khỏi mảng "songs" dựa trên chỉ số (index)
-    songList.songs.splice(index, 1);
-
-    // Hiển thị lại danh sách bài hát và cập nhật JSON output
-    displaySongs();
-}
-
-// Hàm sao chép nội dung của phần tử JSON output
-function copyJson() {
-    var jsonOutput = document.getElementById("jsonOutput");
-    var range = document.createRange();
-    range.selectNode(jsonOutput);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand("copy");
-    window.getSelection().removeAllRanges();
-}
-
-// Khởi tạo danh sách bài hát và hiển thị lên màn hình khi trang được tải
-window.onload = function() {
-    displaySongs();
-};

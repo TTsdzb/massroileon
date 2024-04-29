@@ -205,7 +205,7 @@ function editSong(index) {
     var song = songList.songs[index];
 
     // Hiển thị giao diện sửa đổi với các trường input được điền với thông tin hiện tại của bài hát
-    document.getElementById("newIdx").value = song.idx !== undefined ? song.side : "";
+    document.getElementById("newIdx").value = song.idx || "";
     document.getElementById("newId").value = song.id || "";
     document.getElementById("newTitleEn").value = song.title_localized.en || "";
     document.getElementById("newTitleJa").value = song.title_localized.ja || "";

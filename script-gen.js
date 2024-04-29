@@ -143,3 +143,52 @@ function displaySongs() {
 
     // Xóa tất cả các phần tử con của ul trước khi hiển thị lại
     ul.innerHTML = "";
+
+    // Duyệt qua mảng các bài hát và thêm chúng vào danh sách
+    songList.songs.forEach(function(song, index) {
+        var li = document.createElement("li");
+        li.textContent = "Song: " + song.title_localized.en;
+
+        // Tạo một nút xóa cho mỗi mục và gắn nó với hàm xóa tương ứng
+        var deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.onclick = function() {
+            deleteSong(index);
+        };
+
+        // Thêm nút xóa vào phần tử li
+        li.appendChild(deleteButton);
+
+        // Thêm phần tử li vào danh sách
+        ul.appendChild(li);
+    });
+
+    // Cập nhật dữ liệu JSON output
+    var jsonOutput = document.getElementById("jsonOutput");
+    jsonOutput.textContent = JSON.stringify(songList, null, 2);
+}
+
+// Hàm xóa một bài hát
+function deleteSong(index) {
+    // Xóa một mục khỏi mảng "songs" dựa trên chỉ số (index)
+    songList.songs.splice(index, 1);
+
+    // Hiển thị lại danh sách bài hát và cập nhật JSON output
+    displaySongs();
+}
+
+// Hàm sao chép nội dung của phần tử JSON output
+function copyJson() {
+    var jsonOutput = document.getElementById("jsonOutput");
+    var range = document.createRange();
+    range.selectNode(jsonOutput);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+}
+
+// Khởi tạo danh sách bài hát và hiển thị lên màn hình khi trang được tải
+window.onload = function() {
+    displaySongs();
+};

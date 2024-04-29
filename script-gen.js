@@ -6,7 +6,8 @@ var songList = {
 // Hàm thêm bài hát
 function addSong() {
     // Lấy thông tin về bài hát từ các trường input
-    var idx = parseInt(document.getElementById("newIdx").value);
+    var idxValue = document.getElementById("newIdx").value.trim();
+    var idx = idxValue !== "" ? parseInt(idxValue) : null;
     var id = document.getElementById("newId").value;
     var titleEn = document.getElementById("newTitleEn").value;
     var titleJp = document.getElementById("newTitleJp").value;
@@ -22,6 +23,8 @@ function addSong() {
     var bg_inverse = document.getElementById("newBgInverse").value;
     var date = document.getElementById("newDate").value;
     var remote_dl = document.getElementById("remote_dl").checked;
+    var source_en = document.getElementById("newSourceEn").value;
+    var source_copyright = document.getElementById("source_copyright").value;
     var version = document.getElementById("newVersion").value;
 
     // Lấy thông tin về khó khăn từ các trường input
@@ -45,10 +48,12 @@ function addSong() {
     var chartDesigner3 = document.getElementById("chartDesigner3").value;
     var jacketDesigner3 = document.getElementById("jacketDesigner3").value;
     var ratingPlus3 = document.getElementById("ratingPlus3").checked; // Lấy giá trị của checkbox
+    var jacketOverride = document.getElementById("jacketOverride").checked;
+    var audioOverride = document.getElementById("audioOverride").checked;
+
 
     // Tạo một đối tượng JSON mới chứa thông tin về bài hát
     var newSong = {
-        "idx": idx,
         "id": id,
         "title_localized": {
             "en": titleEn,
@@ -66,6 +71,10 @@ function addSong() {
         "bg_inverse": bg_inverse,
         "date": date,
         "remote_dl": remote_dl,
+        "source_localized": {
+            "en": source_en
+          },
+        "source_copyright": source_copyright,
         "version": version,
         "difficulties": [
             {
@@ -101,13 +110,22 @@ function addSong() {
     if (ratingPlus2) newSong.difficulties[2].ratingPlus = true;
     if (ratingPlus3) newSong.difficulties[3].ratingPlus = true;
 
+    if (jacketOverride) newSong.difficulties[3].jacketOverride = true;
+    if (audioOverride) newSong.difficulties[3].audioOverride = true;
+
     // Kiểm tra và loại bỏ thông tin về các khó khăn nếu không được nhập vào
     if (jacketDesigner3.trim() === '') {
         newSong.difficulties.pop(); // Loại bỏ phần tử cuối cùng khỏi mảng difficulties
     }
 
+    // Tạo một đối tượng chứa chỉ trường "idx" nếu giá trị khác null
+    var idxObject = idx !== null ? {"idx": idx} : {};
+
+    // Kết hợp đối tượng chứa thông tin bài hát và đối tượng chứa trường "idx"
+    var finalSongObject = {...idxObject, ...newSong};
+
     // Thêm bài hát mới vào danh sách
-    songList.songs.push(newSong);
+    songList.songs.push(finalSongObject);
 
     // Hiển thị lại danh sách bài hát và cập nhật JSON output
     displaySongs();
@@ -115,6 +133,18 @@ function addSong() {
     // Xóa dữ liệu trong các trường input sau khi thêm bài hát
     clearInputFields();
 }
+
+function toggleIdxField() {
+    var toggleIdx = document.getElementById("toggleIdx");
+    var idxField = document.getElementById("newIdx");
+
+    if (toggleIdx.checked) {
+        idxField.disabled = false; // Cho phép chỉnh sửa trường idx
+    } else {
+        idxField.disabled = true; // Không cho phép chỉnh sửa trường idx
+    }
+}
+
 
 // Hàm xóa dữ liệu trong các trường input
 function clearInputFields() {

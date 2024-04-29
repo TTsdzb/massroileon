@@ -5,16 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Songs</title>
     <style>
-        /* CSS để tạo hai cột */
-        .container {
-            display: flex;
-            justify-content: space-between;
+        /* Định dạng CSS cho giao diện người dùng */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
         }
-
-        .column {
-            flex: 0 0 48%; /* Độ rộng của mỗi cột */
+        h2 {
+            margin-bottom: 10px;
         }
-        /* CSS để tạo viền bo cho phần JSON Output */
+        label {
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
         #jsonOutput {
             border: 1px solid #ccc;
             padding: 10px;
@@ -23,10 +49,13 @@
     </style>
 </head>
 <body>
-    <h2>Song List Maker<br>Ver: 0.0.1beta</h2>
+    <h2>Song List Maker<br>Ver: 0.0.2beta</h2>
     <!-- Phần thông tin bài hát -->
     <div class="container">
         <div class="column">
+            <label for="toggleIdx">Enable idx:</label>
+            <input type="checkbox" id="toggleIdx" onchange="toggleIdxField()">
+            <br>
             <input type="text" id="newIdx" placeholder="Idx">
             <br>
             <input type="text" id="newId" placeholder="Id song">
@@ -59,6 +88,10 @@
             <br>
             <label for="remote_dl">Remote_dl:</label>
             <input type="checkbox" id="remote_dl" name="remote_dl"><br>
+            <input type="text" id="newSourceEn" placeholder="Source Location (en)">
+            <br>
+            <input type="text" id="source_copyright" placeholder="Source Copyright">
+            <br>
             <input type="text" id="newVersion" placeholder="Version">
             <br>
         </div>
@@ -107,6 +140,10 @@
             <br>
             <label for="ratingPlus3">Rating Plus:</label>
             <input type="checkbox" id="ratingPlus3" name="ratingPlus3"><br>
+            <label for="jacketOverride">Jacket Override:</label>
+            <input type="checkbox" id="jacketOverride" name="jacketOverride"><br>
+            <label for="audioOverride">Audio Override:</label>
+            <input type="checkbox" id="audioOverride" name="audioOverride"><br>
         </div>
     </div>
     <button onclick="addSong()">Add Song</button>

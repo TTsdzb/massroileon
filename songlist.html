@@ -165,8 +165,8 @@
         <!-- Danh sách các bài hát sẽ được liệt kê ở đây -->
     </ul>
     <!-- HTML -->
-    <input type="file" id="songListFileInput" accept=".json">
-    <button onclick="importSongList()">Import JSON</button>
+    <input type="file" id="songListFileInput" accept=".json" style="display: none;" onchange="importSongList()">
+    <label for="songListFileInput">Import JSON</label>
 
     <h3>JSON Output:</h3>
     <pre id="jsonOutput">{}</pre>

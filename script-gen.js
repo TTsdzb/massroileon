@@ -21,6 +21,7 @@ function addSong() {
     var side = parseInt(document.getElementById("newSide").value);
     var bg = document.getElementById("newBg").value;
     var bg_inverse = document.getElementById("newBgInverse").value;
+    var world_unlock = document.getElementById("world_unlock").checked;
     var remote_dl = document.getElementById("remote_dl").checked;
     var source_en = document.getElementById("newSourceEn").value;
     var source_copyright = document.getElementById("source_copyright").value;
@@ -62,6 +63,7 @@ function addSong() {
         "bg": bg,
         "bg_inverse": bg_inverse,
         "date": timestamp,
+        "world_unlock": world_unlock,
         "remote_dl": remote_dl,
         "source_localized": {
             "en": source_en
@@ -163,6 +165,7 @@ function editSong(index) {
     document.getElementById("newSide").value = song.side !== undefined ? song.side : "";
     document.getElementById("newBg").value = song.bg || "";
     document.getElementById("newBgInverse").value = song.bg_inverse || "";
+    document.getElementById("world_unlock").checked = song.world_unlock || false;
     document.getElementById("remote_dl").checked = song.remote_dl || false;
     document.getElementById("newSourceEn").value = song.source_localized && song.source_localized.en ? song.source_localized.en : "";
     document.getElementById("source_copyright").value = song.source_copyright || "";
@@ -213,6 +216,7 @@ function changeSong(index) {
     var side = parseInt(document.getElementById("newSide").value);
     var bg = document.getElementById("newBg").value;
     var bg_inverse = document.getElementById("newBgInverse").value;
+    var world_unlock = document.getElementById("world_unlock").checked;
     var remote_dl = document.getElementById("remote_dl").checked;
     var source_en = document.getElementById("newSourceEn").value;
     var source_copyright = document.getElementById("source_copyright").value;
@@ -255,6 +259,7 @@ function changeSong(index) {
         "bg": bg,
         "bg_inverse": bg_inverse,
         "date": timestamp,
+        "world_unlock": world_unlock,
         "remote_dl": remote_dl,
         "source_localized": {
             "en": source_en

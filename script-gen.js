@@ -335,7 +335,7 @@ function displaySongs() {
     // Duyệt qua mảng các bài hát và thêm chúng vào danh sách
     songList.songs.forEach(function(song, index) {
         var li = document.createElement("li");
-        li.textContent = "Song: " + song.title_localized.en;
+        li.textContent = "Song: " + song.title_localized.en + "  ";
 
         // Tạo một nút xóa cho mỗi mục và gắn nó với hàm xóa tương ứng
         var deleteButton = document.createElement("button");

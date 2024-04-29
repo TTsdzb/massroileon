@@ -58,6 +58,9 @@
             margin: 0px;
             display: block;
         }
+        .DateTime{
+            display: flex;
+        }
     </style>
 </head>
 <body>
@@ -94,8 +97,10 @@
             <br>
             <input type="text" id="newBgInverse" placeholder="Bg inverse">
             <br>
-            <input type="text" id="newDate" placeholder="Date ( dd/mm/yyyy )">
-            <br>
+            <div class="DateTime">
+                <input type="text" id="newTime" placeholder="Time ( hh:mm:ss )"><br>
+                <input type="text" id="newDate" placeholder="Date ( dd/mm/yyyy )">
+            </div>
             <label for="remote_dl">Remote_dl:</label>
             <input type="checkbox" id="remote_dl" name="remote_dl"><br>
             <br>

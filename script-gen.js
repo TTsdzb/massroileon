@@ -336,6 +336,11 @@ function displaySongs() {
     songList.songs.forEach(function(song, index) {
         var li = document.createElement("li");
         li.textContent = "Song: " + song.title_localized.en + "  ";
+        
+        var linebr1 = document.createElement("br");
+        li.appendChild(linebr1);
+        var linebr2 = document.createElement("br");
+        li.appendChild(linebr2);
 
         // Tạo một nút xóa cho mỗi mục và gắn nó với hàm xóa tương ứng
         var deleteButton = document.createElement("button2");

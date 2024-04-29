@@ -115,7 +115,7 @@ function addSong() {
 
     // Kiểm tra và loại bỏ thông tin về các khó khăn nếu không được nhập vào
 if (rating3 === null || isNaN(rating3)) {
-    newSong.difficulties.pop(); // Loại bỏ phần tử cuối cùng khỏi mảng difficulties
+    newSong.difficulties.pop(); // Loại bỏ phần tử cuối cùng khỏi mảng difficulties 
 }
 
 

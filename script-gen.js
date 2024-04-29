@@ -21,7 +21,6 @@ function addSong() {
     var side = parseInt(document.getElementById("newSide").value);
     var bg = document.getElementById("newBg").value;
     var bg_inverse = document.getElementById("newBgInverse").value;
-    var date = parseInt(document.getElementById("newDate").value);
     var remote_dl = document.getElementById("remote_dl").checked;
     var source_en = document.getElementById("newSourceEn").value;
     var source_copyright = document.getElementById("source_copyright").value;

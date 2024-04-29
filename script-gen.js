@@ -35,8 +35,9 @@ function addSong() {
     // Tạo một đối tượng Date từ các phần tử ngày, tháng và năm
     var dateObject = new Date(year, month, day);
 
-    // Chuyển đổi đối tượng Date thành timestamp
-    var timestamp = dateObject.getTime();
+    // Chuyển đổi đối tượng Date thành timestamp Unix 10 số
+    var timestamp = Math.floor(dateObject.getTime() / 1000);
+
 
     // Tạo một đối tượng JSON mới chứa thông tin về bài hát
     var newSong = {

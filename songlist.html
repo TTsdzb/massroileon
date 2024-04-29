@@ -164,6 +164,10 @@
     <ul id="songList">
         <!-- Danh sách các bài hát sẽ được liệt kê ở đây -->
     </ul>
+    <!-- HTML -->
+    <input type="file" id="songListFileInput" accept=".json">
+    <button onclick="importSongList()">Import JSON</button>
+
     <h3>JSON Output:</h3>
     <pre id="jsonOutput">{}</pre>
     <!-- Button "Copy" để sao chép JSON output -->

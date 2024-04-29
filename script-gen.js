@@ -340,3 +340,34 @@ function toggleIdxField() {
 window.onload = function() {
     displaySongs();
 };
+
+// Hàm import file JSON
+function importSongList() {
+    var fileInput = document.getElementById('songListFileInput');
+    
+    // Kiểm tra xem người dùng đã chọn file hay chưa
+    if (fileInput.files.length > 0) {
+        var file = fileInput.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function(event) {
+            // Đọc nội dung của file JSON
+            var content = event.target.result;
+            
+            try {
+                // Parse nội dung JSON và gán cho biến songList
+                songList = JSON.parse(content);
+
+                // Hiển thị lại danh sách bài hát và cập nhật JSON output
+                displaySongs();
+            } catch (error) {
+                alert('Đã xảy ra lỗi khi đọc file JSON: ' + error.message);
+            }
+        };
+
+        // Đọc file như là một đối tượng dữ liệu URL
+        reader.readAsText(file);
+    } else {
+        alert('Vui lòng chọn một file để import.');
+    }
+}

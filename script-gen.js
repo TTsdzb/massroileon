@@ -23,7 +23,7 @@ function addSong() {
     var artist = document.getElementById("newArtist").value;
     var searchJa = document.getElementById("newSearchJa").value;
     var searchKo = document.getElementById("newSearchKo").value;
-    var bpm = parseInt(document.getElementById("newBpm").value);
+    var bpm = document.getElementById("newBpm").value;
     var bpm_base = parseInt(document.getElementById("newBpmBase").value);
     var set = document.getElementById("newSet").value;
     var purchase = document.getElementById("newPurchase").value;
@@ -268,7 +268,7 @@ function changeSong(index) {
     var artist = document.getElementById("newArtist").value;
     var searchJa = document.getElementById("newSearchJa").value;
     var searchKo = document.getElementById("newSearchKo").value;
-    var bpm = parseInt(document.getElementById("newBpm").value);
+    var bpm = document.getElementById("newBpm").value;
     var bpm_base = parseInt(document.getElementById("newBpmBase").value);
     var set = document.getElementById("newSet").value;
     var purchase = document.getElementById("newPurchase").value;

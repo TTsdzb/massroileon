@@ -110,8 +110,6 @@ function addSong() {
         var chartDesigner = document.getElementById("chartDesigner" + i).value;
         var jacketDesigner = document.getElementById("jacketDesigner" + i).value;
         var ratingPlus = document.getElementById("ratingPlus" + i).checked;
-        var jacketOverride = document.getElementById("jacketOverride").checked;
-        var audioOverride = document.getElementById("audioOverride3").checked;
         var ratingClass = i === 3 ? parseInt(document.getElementById("ratingClass3").value) : i;
 
         var difficulty = {

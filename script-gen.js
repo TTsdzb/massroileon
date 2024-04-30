@@ -110,6 +110,8 @@ function addSong() {
         var chartDesigner = document.getElementById("chartDesigner" + i).value;
         var jacketDesigner = document.getElementById("jacketDesigner" + i).value;
         var ratingPlus = document.getElementById("ratingPlus" + i).checked;
+        var jacketOverride = document.getElementById("jacketOverride").checked;
+        var audioOverride = document.getElementById("audioOverride3").checked;
         var ratingClass = i === 3 ? parseInt(document.getElementById("ratingClass3").value) : i;
 
         var difficulty = {
@@ -118,6 +120,14 @@ function addSong() {
             "jacketDesigner": jacketDesigner,
             "rating": ratingValue
         };
+
+        if (jacketOverride) {
+            difficulty.jacketOverride = true;
+        }
+
+        if (audioOverride) {
+            difficulty.audioOverride = true;
+        }
 
         if (ratingPlus) {
             difficulty.ratingPlus = true;
@@ -199,7 +209,7 @@ function formatDateFromTimestamp(timestamp, isDate) {
 
 
 
-    // Hàm sửa bài hát
+// Hàm sửa bài hát
 function editSong(index) {
     // Lấy thông tin bài hát cần chỉnh sửa từ mảng songList
     var song = songList.songs[index];
@@ -230,30 +240,40 @@ function editSong(index) {
     // Hiển thị ngày và thời gian nếu có
     document.getElementById("newDate").value = song.date ? formatDateFromTimestamp(song.date, true) : "";
     document.getElementById("newTime").value = song.date ? formatDateFromTimestamp(song.date, false) : "";
-    console.log(song.date);
-    
+
+    // Xóa thông tin của difficulty đã hiển thị trước đó
+    for (var i = 0; i <= 3; i++) {
+        document.getElementById("rating" + i).value = "";
+        document.getElementById("chartDesigner" + i).value = "";
+        document.getElementById("jacketDesigner" + i).value = "";
+        document.getElementById("newBg3").value = "";
+        document.getElementById("newVersion3").value = "";
+        document.getElementById("ratingClass3").value = ""; // Xóa thông tin ratingClass3 nếu có
+        }
+
     // Lặp qua mảng difficulties và điền thông tin vào các trường input tương ứng
     song.difficulties.forEach(function(difficulty, i) {
-    document.getElementById("rating" + i).value = difficulty.rating || "";
-    document.getElementById("chartDesigner" + i).value = difficulty.chartDesigner || "";
-    document.getElementById("jacketDesigner" + i).value = difficulty.jacketDesigner || "";
-    document.getElementById("newBg3").value = difficulty.bg || "";
-    document.getElementById("newVersion3").value = difficulty.version || "";
+        document.getElementById("rating" + i).value = difficulty.rating || "";
+        document.getElementById("ratingPlus" + i).checked = difficulty.ratingPlus || false;
+        document.getElementById("chartDesigner" + i).value = difficulty.chartDesigner || "";
+        document.getElementById("jacketDesigner" + i).value = difficulty.jacketDesigner || "";
+        document.getElementById("newBg3").value = difficulty.bg || "";
+        document.getElementById("newVersion3").value = difficulty.version || "";
 
-    // Kiểm tra nếu ratingClass là 3 hoặc 4, thêm thông tin tương ứng
-    if (difficulty.ratingClass === 3) {
-        document.getElementById("ratingClass3").value = difficulty.ratingClass || "";
-    }
-    if (difficulty.ratingClass === 4) {
-        document.getElementById("ratingClass3").value = difficulty.ratingClass || "";
-        console.log(difficulty.ratingClass);
-    }
-});
-
+        // Kiểm tra nếu ratingClass là 3 hoặc 4, thêm thông tin tương ứng
+        if (difficulty.ratingClass === 3) {
+            document.getElementById("ratingClass3").value = difficulty.ratingClass || "";
+        }
+        if (difficulty.ratingClass === 4) {
+            document.getElementById("ratingClass3").value = difficulty.ratingClass || "";
+            console.log(difficulty.ratingClass);
+        }
+    });
 
     // Lưu lại chỉ số của bài hát đang được chỉnh sửa
     window.editingIndex = index;
 }
+
 
 
 // Hàm cập nhật bài hát sau khi chỉnh sửa
@@ -281,6 +301,7 @@ function changeSong(index) {
     var source_en = document.getElementById("newSourceEn").value;
     var source_copyright = document.getElementById("source_copyright").value;
     var version = document.getElementById("newVersion").value;
+    console.log(index);
 
     // Chuyển đổi searchJa thành mảng các giá trị đã được tách ra và loại bỏ khoảng trắng thừa
     var searchJaArray = searchJa.split(',').map(function(item) {
@@ -351,25 +372,26 @@ function changeSong(index) {
 
     // Thêm thông tin về các khó khăn vào mảng "difficulties"
     for (var i = 0; i <= 3; i++) {
-        var ratingValue = parseInt(document.getElementById("rating" + i).value);
-        var chartDesigner = document.getElementById("chartDesigner" + i).value;
-        var jacketDesigner = document.getElementById("jacketDesigner" + i).value;
-        var ratingPlus = document.getElementById("ratingPlus" + i).checked;
-        var ratingClass = i === 3 ? parseInt(document.getElementById("ratingClass3").value) : i;
+    var ratingValue = parseInt(document.getElementById("rating" + i).value);
+    var chartDesigner = document.getElementById("chartDesigner" + i).value;
+    var jacketDesigner = document.getElementById("jacketDesigner" + i).value;
+    // Sử dụng thuộc tính checked để lấy giá trị của checkbox
+    var ratingPlus = document.getElementById("ratingPlus" + i).checked;
+    var ratingClass = i === 3 ? parseInt(document.getElementById("ratingClass3").value) : i;
 
-        var difficulty = {
-            "ratingClass": ratingClass,
-            "chartDesigner": chartDesigner,
-            "jacketDesigner": jacketDesigner,
-            "rating": ratingValue
-        };
+    var difficulty = {
+        "ratingClass": ratingClass,
+        "chartDesigner": chartDesigner,
+        "jacketDesigner": jacketDesigner,
+        "rating": ratingValue,
+        "ratingPlus": ratingPlus,
+        "jacketOverride": jacketOverride,
+        "audioOverride": audioOverride,
+    };
 
-        if (ratingPlus) {
-            difficulty.ratingPlus = true;
-        }
-
-        updatedSong.difficulties.push(difficulty);
+    updatedSong.difficulties.push(difficulty);
     }
+
 
     // Lấy giá trị của background từ trường input newBg3
     var bg = document.getElementById("newBg3").value;
@@ -377,10 +399,10 @@ function changeSong(index) {
     // Kiểm tra xem bg có giá trị không
     if (bg && bg.trim() !== "") {
         // Nếu bg có giá trị, gán nó cho thuộc tính bg của difficulties[3]
-        newSong.difficulties[3].bg = bg;
+        updatedSong.difficulties[3].bg = bg;
     } else {
         // Nếu không có giá trị bg, xóa thuộc tính bg khỏi difficulties[3]
-        delete newSong.difficulties[3].bg;
+        delete updatedSong.difficulties[3].bg;
     }
 
     // Lấy giá trị của version từ trường input newVersion3
@@ -389,10 +411,10 @@ function changeSong(index) {
     // Kiểm tra xem bg có giá trị không
     if (version && version.trim() !== "") {
         // Nếu bg có giá trị, gán nó cho thuộc tính bg của difficulties[3]
-        newSong.difficulties[3].version = version;
+        updatedSong.difficulties[3].version = version;
     } else {
         // Nếu không có giá trị bg, xóa thuộc tính bg khỏi difficulties[3]
-        delete newSong.difficulties[3].version;
+        delete updatedSong.difficulties[3].version;
     }
 
     // Kiểm tra và loại bỏ thông tin về các khó khăn nếu không được nhập vào

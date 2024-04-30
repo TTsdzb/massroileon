@@ -119,14 +119,6 @@ function addSong() {
             "rating": ratingValue
         };
 
-        if (jacketOverride) {
-            difficulty.jacketOverride = true;
-        }
-
-        if (audioOverride) {
-            difficulty.audioOverride = true;
-        }
-
         if (ratingPlus) {
             difficulty.ratingPlus = true;
         }

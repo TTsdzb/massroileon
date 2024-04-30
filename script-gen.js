@@ -210,9 +210,8 @@ function editSong(index) {
     document.getElementById("newTitleEn").value = song.title_localized.en || "";
     document.getElementById("newTitleJa").value = song.title_localized.ja || "";
     document.getElementById("newArtist").value = song.artist || "";
-    document.getElementById("newSearchJa").value = song.search_title.ja.join(', ');
-    console.log(song);
-    document.getElementById("newSearchKo").value = song.search_title.ko.join(', ');
+    document.getElementById("newSearchJa").value = song.search_title && song.search_title.ja ? song.search_title.ja.join(', ') : "";
+    document.getElementById("newSearchKo").value = song.search_title && song.search_title.ko ? song.search_title.ko.join(', ') : "";
     document.getElementById("newBpm").value = song.bpm || "";
     document.getElementById("newBpmBase").value = song.bpm_base || "";
     document.getElementById("newSet").value = song.set || "";

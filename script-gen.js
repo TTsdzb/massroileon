@@ -556,3 +556,18 @@ function importSongList() {
         alert('Vui lòng chọn một file để import.');
     }
 }
+
+// Hàm lưu nội dung JSON vào tệp
+function saveJson() {
+    var jsonOutput = document.getElementById("jsonOutput").textContent;
+    var blob = new Blob([jsonOutput], { type: "application/." });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "songlist";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+

@@ -213,7 +213,7 @@
     <input type="file" id="songListFileInput" accept=".json" style="display: none;" onchange="importSongList()">
     <label class="jsonimport" for="songListFileInput">Import JSON - Click</label>
     <br>
-    <h3>JSON Output:</h3>
+    <h3>JSON Output:<button onclick="saveJson()">Save JSON</button></h3>
     <pre id="jsonOutput">{}</pre>
     <!-- Button "Copy" để sao chép JSON output -->
     <button onclick="copyJson()">Copy</button>

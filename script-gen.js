@@ -373,11 +373,12 @@ function changeSong(index) {
         "ratingClass": ratingClass,
         "chartDesigner": chartDesigner,
         "jacketDesigner": jacketDesigner,
-        "rating": ratingValue,
-        "ratingPlus": ratingPlus,
-        "jacketOverride": jacketOverride,
-        "audioOverride": audioOverride,
+        "rating": ratingValue
     };
+
+    if (ratingPlus) {
+        difficulty.ratingPlus = true;
+    }
 
     updatedSong.difficulties.push(difficulty);
     }

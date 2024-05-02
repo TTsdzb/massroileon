@@ -179,9 +179,10 @@ const data = [
   {
     id: "0027",
     displayName: "Zack",
-    donated: "4$/24$",
+    isPro: true,
+    donated: "6$/24$",
     Reward: "Top 2 Event 12-4",
-    dueDate: "May 8, 2024 00:00:00",
+    dueDate: "Jul 7, 2024 00:00:00",
   },
   {
     id: "0028",
@@ -275,9 +276,10 @@ const data = [
   },
   {
     id: "0042",
+    isPro: true,
     displayName: "Tan Flame",
-    donated: "2$/24$",
-    dueDate: "May 2, 2024 00:00:00",
+    donated: "4$/24$",
+    dueDate: "Jun 2, 2024 00:00:00",
   },
   {
     id: "0043",

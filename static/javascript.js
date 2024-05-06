@@ -11,7 +11,6 @@ const data = [
     userPro: true,
     displayName: "Izumi",
     donated: "6$/24$",
-    Reward: "Top 3 Event 12-4",
     dueDate: "May 8, 2024 00:00:00",
   },
   {
@@ -19,7 +18,7 @@ const data = [
     userPro: true,
     displayName: "Hớn Ngủ Khò Khò",
     donated: "161K/512K ?10K",
-    dueDate: "Jul 15, 2024 00:00:00",
+    dueDate: "Jul 16, 2024 00:00:00",
   },
   {
     id: "0003",
@@ -103,9 +102,8 @@ const data = [
     id: "0015",
     userPro: true,
     displayName: "Mai Trần Ngọc Anh",
-    Reward: "Top 1 Event 12-4",
     donated: "135K/512K",
-    dueDate: "Aug 4, 2024 00:00:00",
+    dueDate: "Aug 7, 2024 00:00:00",
   },
   {
     id: "0016",
@@ -181,8 +179,7 @@ const data = [
     displayName: "Zack",
     isPro: true,
     donated: "6$/24$",
-    Reward: "Top 2 Event 12-4",
-    dueDate: "Jul 7, 2024 00:00:00",
+    dueDate: "Jul 8, 2024 00:00:00",
   },
   {
     id: "0028",
@@ -229,7 +226,7 @@ const data = [
     userPro: true,
     displayName: "Ka non",
     donated: "6$/24$",
-    dueDate: "Jul 14, 2024 00:00:00",
+    dueDate: "Jul 15, 2024 00:00:00",
   },
   {
     id: "0035",
@@ -260,7 +257,7 @@ const data = [
     userPro: true,
     displayName: "清风 泡柠檬",
     donated: "15$/24$",
-    dueDate: "April 26, 2025 00:00:00",
+    dueDate: "May 1, 2025 00:00:00",
   },
   {
     id: "0040",
@@ -361,6 +358,20 @@ const data = [
     displayName: "Li frozen",
     donated: "8$/24$",
     dueDate: "Oct 18, 2024 00:00:00",
+  },
+  {
+    id: "0056",
+    userPro: false,
+    displayName: "ลิงเล็บขบ Ezymoney",
+    donated: "2$/24$",
+    dueDate: "Jun 4, 2024 00:00:00",
+  },
+  {
+    id: "0057",
+    userPro: false,
+    displayName: "DFT1",
+    donated: "2$/24$",
+    dueDate: "Jun 5, 2024 00:00:00",
   },
 ];
 

@@ -256,7 +256,7 @@ const data = [
     id: "0039",
     userPro: true,
     displayName: "清风 泡柠檬",
-    donated: "15$/24$",
+    donated: "16$/24$",
     dueDate: "May 31, 2025 00:00:00",
   },
   {

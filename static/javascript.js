@@ -17,14 +17,14 @@ const data = [
     id: "0002",
     userPro: true,
     displayName: "Hớn Ngủ Khò Khò",
-    donated: "161K/512K ?10K",
+    donated: "161K/540K ?10K",
     dueDate: "Jul 16, 2024 00:00:00",
   },
   {
     id: "0003",
     userPro: true,
     displayName: "Nguyen Truong",
-    donated: "225K/512K",
+    donated: "225K/540K",
     dueDate: "Aug 10, 2024 00:00:00",
   }/*,
   {
@@ -37,7 +37,7 @@ const data = [
     id: "0005",
     userPro: true,
     displayName: "Vũ Đức",
-    donated: "146K/512K",
+    donated: "146K/540K",
     dueDate: "Jun 6, 2024 00:00:00",
   }/*,
   {
@@ -95,14 +95,14 @@ const data = [
     id: "0014",
     userPro: true,
     displayName: "San Ngọc",
-    donated: "126K/512K",
+    donated: "126K/540K",
     dueDate: "May 29, 2024 00:00:00",
   },
   {
     id: "0015",
     userPro: true,
     displayName: "Mai Trần Ngọc Anh",
-    donated: "135K/512K ?23K",
+    donated: "135K/540K ?23K",
     Reward : "Win Giveaway Event 07-05 (+1 Month)",
     dueDate: "Sep 6, 2024 00:00:00",
   },
@@ -110,7 +110,7 @@ const data = [
     id: "0016",
     userPro: true,
     displayName: "Rimuru Izanobi",
-    donated: "121K/512K",
+    donated: "121K/540K",
     dueDate: "May 28, 2024 00:00:00",
   },
   {
@@ -129,7 +129,7 @@ const data = [
     id: "0019",
     userPro: true,
     displayName: "Đặng Đạt",
-    donated: "116K/512K",
+    donated: "116K/540K",
     dueDate: "May 10, 2024 00:00:00",
   }/*,
   {
@@ -166,7 +166,7 @@ const data = [
   {
     id: "0025",
     displayName: "Duy Nguyen Minh Dang",
-    donated: "0K/512K",
+    donated: "0K/540K",
     dueDate: "Mar 1, 2024 00:00:00",
   },
   {
@@ -193,14 +193,14 @@ const data = [
     id: "0029",
     displayName: "Moeo",
     Zone: "12-05-2024",
-    donated: "149K/512K",
+    donated: "149K/540K",
     dueDate: "Aug 12, 2024 00:00:00",
   },
   {
     id: "0030",
     userPro: true,
     displayName: "Haruinnqv.",
-    donated: "200K/512K",
+    donated: "200K/540K",
     dueDate: "Oct 3, 2024 00:00:00",
   }/*,
   {
@@ -238,13 +238,13 @@ const data = [
   {
     id: "0036",
     displayName: "Ch1m Hoèng",
-    donated: "50K/512K",
+    donated: "50K/540K",
     dueDate: "Apr 20, 2024 00:00:00",
   },
   {
     id: "0037",
     displayName: "Celes Siesta",
-    donated: "40K/512K",
+    donated: "40K/540K",
     dueDate: "Apr 20, 2024 00:00:00",
   },
   {
@@ -326,7 +326,7 @@ const data = [
   {
     id: "0050",
     displayName: "Lý Triệu Huy",
-    donated: "80K/512K",
+    donated: "80K/540K",
     dueDate: "Jun 15, 2024 00:00:00",
   },
   {
@@ -338,7 +338,7 @@ const data = [
   {
     id: "0052",
     displayName: "HelloKeqing Hà",
-    donated: "40K/512K",
+    donated: "40K/540K",
     dueDate: "May 16, 2024 00:00:00",
   },
   {
@@ -378,7 +378,7 @@ const data = [
     id: "0058",
     userPro: true,
     displayName: "Tùng Tôm",
-    donated: "80K/512K",
+    donated: "80K/540K",
     dueDate: "Jun 5, 2024 00:00:00",
   },
 ];

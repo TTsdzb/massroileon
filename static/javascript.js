@@ -192,9 +192,9 @@ const data = [
   {
     id: "0029",
     displayName: "Moeo",
-    Zone: "07-05-2024",
-    donated: "2$/24$",
-    dueDate: "Apr 6, 2024 00:00:00",
+    Zone: "12-05-2024",
+    donated: "149K/512K",
+    dueDate: "Aug 12, 2024 00:00:00",
   },
   {
     id: "0030",

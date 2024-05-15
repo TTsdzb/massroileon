@@ -320,8 +320,8 @@ const data = [
   {
     id: "0049",
     displayName: "廻り",
-    donated: "4$/24$",
-    dueDate: "May 16, 2024 00:00:00",
+    donated: "6$/24$",
+    dueDate: "Jul 15, 2024 00:00:00",
   },
   {
     id: "0050",
@@ -338,8 +338,8 @@ const data = [
   {
     id: "0052",
     displayName: "HelloKeqing Hà",
-    donated: "40K/540K",
-    dueDate: "May 16, 2024 00:00:00",
+    donated: "80K/540K",
+    dueDate: "Jun 15, 2024 00:00:00",
   },
   {
     id: "0053",

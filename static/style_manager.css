@@ -18,6 +18,13 @@ main {
   width: 100%;
   margin: 0 auto;
 }
+
+.countdown-container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -41,7 +48,7 @@ header {
 }
 
 h2 {
-  margin-top: 16px;
+  margin-top: 0px;
 }
 
 h1 {
@@ -76,7 +83,7 @@ li {
   pointer-events: none;
 }
 .hero .row {
-  display: flex;
+  display: block;
   align-items: center;
   min-height: 100vh;
   height: 100%;
@@ -93,7 +100,7 @@ li {
 }
 .hero .row h2 {
   font-size: 36px;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
   text-shadow: 2px 2px 3px #000000;
 }
 .hero .column {
@@ -346,4 +353,21 @@ span {
   margin: 1 0px;
   color: #fff;
   font-size: 17x;
+}
+
+.countdown {
+  margin-bottom: 20px;
+}
+
+hr {
+  margin-top: 32px;
+  border-top: 1px solid #ccc;
+}
+
+filter {
+  border-radius: 24px;
+}
+
+select {
+  border-radius: 12px;
 }

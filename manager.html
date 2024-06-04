@@ -14,15 +14,29 @@
         <div class="bg-image"></div>
         <nav class="nav container">
           <h2 class="nav_logo"><a href="index">ZP.Aurora Manager</a></h2>
-
           <ul class="menu_items">
             <img src="static/index/times.svg" alt="timesicon" id="menu_toggle" />
           </ul>
+
+          <div class="filter">
+            <label for="isProFilter">Show users: </label>
+            <select id="isProFilter">
+              <option value="all">All</option>
+              <option value="pro">Pro Users</option>
+              <option value="nonPro">New Users</option>
+              <option value="LifeTime">LifeTime</option>
+              <option value="EXPIRED">EXPIRED</option>
+            </select>
+          </div>
+
           
       </header>
       <!-- Header End -->
 
       <!-- Hero Start -->
+      <br>
+      <br>
+      <br>
       <section class="hero">
         <div class="row container" id="countdown-container"></div>
 

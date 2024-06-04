@@ -26,33 +26,33 @@ const data = [
     displayName: "Nguyen Truong",
     donated: "225K/540K",
     dueDate: "Aug 10, 2024 00:00:00",
-  }/*,
+  },
   {
     id: "0004",
     displayName: "Kyukami",
     donated: "0$/24$",
     dueDate: "Feb 9, 2024 00:00:00",
-  }*/,
+  },
   {
     id: "0005",
     userPro: true,
     displayName: "Vũ Đức",
-    donated: "146K/540K",
-    dueDate: "Jun 8, 2024 00:00:00",
-  }/*,
+    donated: "171K/540K",
+    dueDate: "Jul 8, 2024 00:00:00",
+  },
   {
     id: "0006",
     displayName: "zi7o",
     donated: "0$/24$",
     dueDate: "Feb 15, 2024 00:00:00",
-  }*/,
+  },
   {
     id: "0007",
     userPro: true,
     displayName: "Lucas",
     donated: "7$/24$",
     dueDate: "Jun 14, 2024 00:00:00",
-  }/*,
+  },
   {
     id: "0008",
     displayName: "Oreorio",
@@ -70,7 +70,7 @@ const data = [
     displayName: "Cheese",
     donated: "0$/24$",
     dueDate: "Feb 16, 2024 00:00:00",
-  }*/,
+  },
   {
     id: "0011",
     displayName: "そのRay..",
@@ -86,9 +86,8 @@ const data = [
   },
   {
     id: "0013",
-    userPro: true,
     displayName: "Sunare Aiko Vt.",
-    donated: "7$/24$",
+    donated: "0$/24$",
     dueDate: "May 24, 2024 00:00:00",
   },
   {
@@ -131,24 +130,23 @@ const data = [
     displayName: "Đặng Đạt",
     donated: "116K/540K",
     dueDate: "Jun 16, 2024 00:00:00",
-  }/*,
+  },
   {
     id: "0020",
     displayName: "Christian Jay",
     donated: "0$/24$",
     dueDate: "Mar 10, 2024 00:00:00",
-  }*/,
+  },
   {
     id: "0021",
     userPro: true,
     displayName: "lid.n",
     donated: "Full",
   },
-  /**{
+  {
     id: "0022",
-    userPro: true,
     displayName: "bagelseeker",
-    donated: "4$/24$",
+    donated: "0$/24$",
     dueDate: "Apr 17, 2024 00:00:00",
   },
   {
@@ -156,13 +154,13 @@ const data = [
     displayName: "Re UniuM",
     donated: "2$/24$",
     dueDate: "Mar 23, 2024 00:00:00",
-  }*/,
+  },
   {
     id: "0024",
     userPro: true,
     displayName: "ok boomber",
     donated: "Full",
-  }/*,
+  },
   {
     id: "0025",
     displayName: "Duy Nguyen Minh Dang",
@@ -174,11 +172,11 @@ const data = [
     displayName: "36263572 bili",
     donated: "0$/24$",
     dueDate: "Mar 29, 2024 00:00:00",
-  }*/,
+  },
   {
     id: "0027",
     displayName: "Zack",
-    isPro: true,
+    userPro: true,
     donated: "6$/24$",
     dueDate: "Jul 13, 2024 00:00:00",
   },
@@ -191,6 +189,7 @@ const data = [
   },
   {
     id: "0029",
+    userPro: true,
     displayName: "Moeo",
     Zone: "12-05-2024",
     donated: "149K/540K",
@@ -201,11 +200,11 @@ const data = [
     userPro: true,
     displayName: "Haruinnqv.",
     donated: "Full",
-  }/*,
+  },
   {
     id: "0031",
     displayName: "jeong jimin",
-    donated: "2$/24$",
+    donated: "0$/24$",
     dueDate: "Apr 9, 2024 00:00:00",
   },
   {
@@ -213,7 +212,7 @@ const data = [
     displayName: "Airee",
     donated: "2$/24$",
     dueDate: "Apr 10, 2024 00:00:00",
-  }*/,
+  },
   {
     id: "0033",
     userPro: true,
@@ -228,7 +227,7 @@ const data = [
     donated: "6$/24$",
     dueDate: "Jul 16, 2024 00:00:00",
   },
-  /*{
+  {
     id: "0035",
     displayName: "Bims",
     donated: "2$/24$",
@@ -251,7 +250,7 @@ const data = [
     displayName: "Lulu Deer",
     donated: "2$/24$ & 2$/24$",
     dueDate: "Apr 21, 2024 00:00:00",
-  }*/,
+  },
   {
     id: "0039",
     userPro: true,
@@ -259,7 +258,7 @@ const data = [
     donated: "16$/24$",
     dueDate: "May 31, 2025 00:00:00",
   },
-  /*{
+  {
     id: "0040",
     displayName: "ᕕ(◠ڼ◠)ᕗ",
     donated: "2$/24$",
@@ -270,15 +269,15 @@ const data = [
     displayName: "Cooper King",
     donated: "2$/24$",
     dueDate: "Apr 29, 2024 00:00:00",
-  }*/,
+  },
   {
     id: "0042",
-    isPro: true,
-    displayName: "Tan Flame",
+    userPro: true,
+    displayName: "Xago 296",
     donated: "4$/24$",
     dueDate: "Jun 2, 2024 00:00:00",
   },
-  /*{
+  {
     id: "0043",
     displayName: "愛刃",
     donated: "2$/24$",
@@ -289,7 +288,7 @@ const data = [
     displayName: "A S",
     donated: "2$/24$",
     dueDate: "May 5, 2024 00:00:00",
-  }*/,
+  },
   {
     id: "0045",
     displayName: "bedmoonl bedmoonl",
@@ -304,7 +303,7 @@ const data = [
     donated: "5$/24$",
     dueDate: "Jul 5, 2024 00:00:00",
   },
-  /*{
+  {
     id: "0047",
     displayName: "Ybe",
     donated: "2$/24$",
@@ -315,9 +314,10 @@ const data = [
     displayName: "Onyix Veil",
     donated: "2$/24$",
     dueDate: "May 12, 2024 00:00:00",
-  }*/,
+  },
   {
     id: "0049",
+    userPro: true,
     displayName: "廻り",
     donated: "6$/24$",
     dueDate: "Jul 15, 2024 00:00:00",
@@ -349,7 +349,7 @@ const data = [
   {
     id: "0054",
     displayName: "80742",
-    donated: "4$/24$",
+    donated: "0$/24$",
     dueDate: "May 20, 2024 00:00:00",
   },
   {
@@ -377,12 +377,12 @@ const data = [
     id: "0058",
     userPro: true,
     displayName: "Tùng Tôm",
-    donated: "80K/540K",
-    dueDate: "Jun 5, 2024 00:00:00",
+    donated: "135K/540K",
+    dueDate: "Aug 5, 2024 00:00:00",
   },
   {
     id: "0059",
-    userPro: true,
+    userPro: false,
     displayName: "Hatura",
     donated: "45K/540K",
     dueDate: "Jun 6, 2024 00:00:00",
@@ -401,130 +401,112 @@ const data = [
   },
   {
     id: "0062",
+    userPro: true,
     displayName: "Hunk de Various",
     donated: "180K/540K",
     dueDate: "Nov 15, 2024 00:00:00",
   },
   {
     id: "0063",
-    isPro: true,
+    userPro: true,
     displayName: "ren",
     donated: "Full"
+  },
+  {
+    id: "0064",
+    userPro: false,
+    displayName: "TreystF75",
+    donated: "2$/24$",
+    dueDate: "Jul 1, 2024 00:00:00",
+  },
+  {
+    id: "0065",
+    userPro: true,
+    displayName: "Lapoz",
+    donated: "8$/24$",
+    dueDate: "Nov 30, 2024 00:00:00",
+  },
+  {
+    id: "0066",
+    userPro: false,
+    displayName: "Hikari",
+    donated: "50K/540K",
+    dueDate: "Jul 5, 2024 00:00:00",
   },
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Create a div to store countdowns
-  const counts = document.createElement("div");
-  counts.className = "column";
+  const countdownContainer = document.getElementById('countdown-container');
+  const filterElement = document.getElementById('isProFilter');
 
-  // Prepare elements and data for each player
-  data.forEach((player) => {
-    const isPro = document.createElement("h2");
-    const username = document.createElement("h2");
-
-    isPro.innerHTML = `${player.userPro ? "Pro" : "New"} User: ${
-      player.displayName
-    } <br>ID: ${player.id}`;
-    counts.appendChild(username);
-    counts.appendChild(isPro);
-
-    const isLife = document.createElement("h2");
-
-    isLife.innerHTML = `LifeTime Status: ${
-      player.dueDate === undefined ? "Yes" : "No"
-    }`;
-    counts.appendChild(isLife);
-    
-    // Convert date string to date
-    if (player.dueDate !== undefined) player.dueDate = new Date(player.dueDate);
-
-    const donatedcost = document.createElement("p");
-    donatedcost.innerText = `Donated: ${player.donated}`;
-    counts.appendChild(donatedcost);
-
-    const expireTime = document.createElement("p");
-    // If the player has lifetime privilege, simply ignore due date
-    // Otherwise, format expire date from countdown data
-    // This is a little complicated without third-party libraries
-    expireTime.innerText = `Expired To : ${
-      player.dueDate === undefined
-        ? "Lifetime"
-        : `${player.dueDate.getDate().toString().padStart(2, "0")}-${(
-            player.dueDate.getMonth() + 1
-          )
-            .toString()
-            .padStart(2, "0")}-${player.dueDate.getFullYear()}`
-    }`;
-    counts.appendChild(expireTime);
-
-
-    //Add zone for user
-    const isZone = document.createElement("p");
-    if (player.Zone !== undefined) {
-      isZone.innerHTML = `Zone Date : ${player.Zone}`;
-      counts.appendChild(isZone);
-    }
-
-    // Convert date to timestamp
-    if (player.dueDate !== undefined) player.dueDate = player.dueDate.getTime();
-
-    counts.appendChild(document.createElement("br"));
-
-    //Add reward for user
-    const Rewarded = document.createElement("p");
-    if (player.Reward !== undefined) {
-      Rewarded.innerHTML = `Rewarded : ${player.Reward}`;
-      counts.appendChild(Rewarded);
-      counts.appendChild(document.createElement("br"));
-    }
-
-    const countdown = document.createElement("div");
-    countdown.className = "countdown";
-    countdown.id = `countdown${player.id}`;
-    // If has lifetime privilege add an infinite char to counter
-    countdown.innerHTML = `<span>Time remaining: </span><span id="time${
-      player.id
-    }">${player.dueDate === undefined ? "∞" : ""}</span>`;
-    counts.appendChild(countdown);
-
-    counts.appendChild(document.createElement("hr"));
-  });
-
-  // Add count container to the DOM tree
-  document.getElementById("countdown-container").appendChild(counts);
-
-  // Update the countdown every 1 second
-  setInterval(function () {
-    // Get the current date and time
+  function renderCountdowns(filter) {
+    countdownContainer.innerHTML = '';
     const now = new Date().getTime();
+  
+    const filteredData = data.filter(user => {
+      if (filter === 'pro') return user.userPro;
+      if (filter === 'nonPro') return !user.userPro;
+      if (filter === 'LifeTime') return user.dueDate === undefined;
+      if (filter === 'EXPIRED') {
+        const endDate = new Date(user.dueDate).getTime();
+        const timeLeft = endDate - now;
+        return timeLeft <= 0;
+      }
+      return true;
+    });
 
-    data.forEach((player) => {
-      // If player has lifetime privilege, ignore him
-      if (player.dueDate === undefined) return;
+    filteredData.forEach(user => {
+      const countdownElement = document.createElement('div');
+      countdownElement.classList.add('countdown');
+      countdownElement.innerHTML = `
+        <h2>${user.userPro ? "Pro" : "New"}<span> User: ${user.displayName} ${user.userPro ? '⭐' : ''}</h2>
+        <h2>ID: ${user.id}</h2>
+        <h2>LifeTime Status: ${user.dueDate === undefined ? 'Yes' : 'No'}</h2>
+        <br>
 
-      // Calculate the remaining time
-      const distance = player.dueDate - now;
+        <p>Donated: ${user.donated}</p>
+        ${user.dueDate ? `<p>Expired To : <span id="due-date-${user.id}">${new Date(user.dueDate).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' })}</span></p>` : ''}
+        <br>
+        <p id="countdown-${user.id}"></p>
+        <hr>
+      `;
+      countdownContainer.appendChild(countdownElement);
 
-      // Calculate days, hours, minutes, and seconds
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      if (user.dueDate) {
+        initializeCountdown(user.id, user.dueDate);
+      }
+    });
+  }
 
-      // If the countdown is over, display a message
-      if (distance < 0) {
-        document.getElementById(`countdown${player.id}`).innerHTML =
-          "<span>>>> Renewal failed: EXPIRED <<<</span><br><p>--- Account Status: Freeze ---</p>";
+  function initializeCountdown(id, dueDate) {
+    const countdownElement = document.getElementById(`countdown-${id}`);
+    const endDate = new Date(dueDate).getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const timeLeft = endDate - now;
+
+      if (timeLeft <= 0) {
+        countdownElement.innerHTML = '>>> Renewal failed: EXPIRED <<<<p>--- Account Status: Freeze ---';
         return;
       }
 
-      // Display the countdown
-      document.getElementById(
-        `time${player.id}`
-      ).innerText = `${days}d : ${hours}h : ${minutes}m : ${seconds}s`;
-    });
-  }, 1000);
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `Time remaining: ${days}d : ${hours}h : ${minutes}m : ${seconds}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+
+  filterElement.addEventListener('change', (event) => {
+    renderCountdowns(event.target.value);
+  });
+
+  // Initial render with all users
+  renderCountdowns('all');
 });

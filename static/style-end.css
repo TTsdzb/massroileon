@@ -83,7 +83,7 @@ li {
   width: 100%;
   padding: 0 60px;
   gap: 30px;
-  justify-content: space-between;
+  justify-content: center;
 }
 .hero .row h2,
 .hero .row li,

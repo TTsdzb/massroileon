@@ -4,7 +4,7 @@ const data = [
     id: "0000",
     userPro: true,
     displayName: "MassroiLeon",
-    donated: "Full",
+    donated: "Received LifeTime Privileges ⚙<p>Time remaining: Until the server is completely closed.",
   },
   {
     id: "0001",
@@ -82,7 +82,7 @@ const data = [
     id: "0012",
     userPro: true,
     displayName: "TTsdzb",
-    donated: "Full",
+    donated: "Received LifeTime Privileges ⚙<p>Time remaining: Until the server is completely closed.",
   },
   {
     id: "0013",
@@ -116,13 +116,13 @@ const data = [
     id: "0017",
     userPro: true,
     displayName: "Ái Nhi",
-    donated: "Full",
+    donated: "Received LifeTime Privileges ⚙<p>Time remaining: Until the server is completely closed.",
   },
   {
     id: "0018",
     userPro: true,
     displayName: "Joseph Vu",
-    donated: "Full",
+    donated: "Received LifeTime Privileges ⚙<p>Time remaining: Until the server is completely closed.",
   },
   {
     id: "0019",
@@ -141,7 +141,7 @@ const data = [
     id: "0021",
     userPro: true,
     displayName: "lid.n",
-    donated: "Full",
+    donated: "Received LifeTime Privileges ⚙<p>Time remaining: Until the server is completely closed.",
   },
   {
     id: "0022",
@@ -159,7 +159,7 @@ const data = [
     id: "0024",
     userPro: true,
     displayName: "ok boomber",
-    donated: "Full",
+    donated: "Received LifeTime Privileges ⚙<p>Time remaining: Until the server is completely closed.",
   },
   {
     id: "0025",
@@ -199,7 +199,7 @@ const data = [
     id: "0030",
     userPro: true,
     displayName: "Haruinnqv.",
-    donated: "Full",
+    donated: "Received LifeTime Privileges ⚙<p>Time remaining: Until the server is completely closed.",
   },
   {
     id: "0031",
@@ -325,8 +325,8 @@ const data = [
   {
     id: "0050",
     displayName: "Lý Triệu Huy",
-    donated: "80K/540K",
-    dueDate: "Jun 15, 2024 00:00:00",
+    donated: "105K/540K",
+    dueDate: "Jul 15, 2024 00:00:00",
   },
   {
     id: "0051",
@@ -389,9 +389,10 @@ const data = [
   },
   {
     id: "0060",
+    userPro: true,
     displayName: "Patrick",
-    donated: "2$/24$",
-    dueDate: "Jun 13, 2024 00:00:00",
+    donated: "4$/24$",
+    dueDate: "Jul 13, 2024 00:00:00",
   },
   {
     id: "0061",
@@ -429,9 +430,15 @@ const data = [
   {
     id: "0066",
     userPro: false,
-    displayName: "Hikari",
-    donated: "50K/540K",
-    dueDate: "Jul 5, 2024 00:00:00",
+    displayName: "Jansen Su",
+    donated: "2$/24$",
+    dueDate: "Jul 7, 2024 00:00:00",
+  },
+  {
+    id: "0067",
+    userPro: true,
+    displayName: "Yumi Sayuri",
+    donated: "Received LifeTime Privileges ⚙<p>Time remaining: Until the server is completely closed.",
   },
 ];
 

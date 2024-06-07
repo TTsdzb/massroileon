@@ -364,8 +364,8 @@ hr {
   border-top: 1px solid #ccc;
 }
 
-filter {
-  border-radius: 24px;
+.filter {
+  border-radius: 12px;
   display: flex;
   justify-content: right;
 }

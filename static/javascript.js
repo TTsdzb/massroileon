@@ -482,7 +482,9 @@ document.addEventListener("DOMContentLoaded", function () {
         <p>Donated: ${user.donated}</p>
         ${user.dueDate ? `<p>Expired To : <span id="due-date-${user.id}">${new Date(user.dueDate).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' })}</span></p>` : ''}
         <br>
-        <p id="countdown-${user.id}"></p>
+        <div class="alent-box">
+          <p id="countdown-${user.id}"></p>
+        </div>
       <br>
       </div>
       </div>
@@ -513,7 +515,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-      countdownElement.innerHTML = `Time remaining: ${days}d : ${hours}h : ${minutes}m : ${seconds}s`;
+      let countdownText = `Time remaining: ${days}d : ${hours}h : ${minutes}m : ${seconds}s`;
+      if (days <= 7) {
+        countdownText += `<br><h3><a href="https://ganknow.com/massroileon">Players need to renew immediately</a></h3>`;
+      }
+
+      countdownElement.innerHTML = countdownText;
     }
 
     updateCountdown();

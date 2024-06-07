@@ -466,7 +466,8 @@ document.addEventListener("DOMContentLoaded", function () {
       countdownElement.innerHTML = `
       <div class="box-user">
       <div class="card-info">
-        <h2>${user.userPro ? "Pro" : "New"}<span> User: ${user.displayName} ${user.userPro ? '⭐' : ''}</h2>
+      <br>
+        <h2>${user.userPro ? "Pro" : "New"}<span> User: ${user.displayName} ${user.userPro ? '🌟' : ''}</h2>
         <h2>ID: ${user.id}</h2>
         <h2>LifeTime Status: ${user.dueDate === undefined ? 'Yes' : 'No'}</h2>
         <br>
@@ -475,7 +476,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ${user.dueDate ? `<p>Expired To : <span id="due-date-${user.id}">${new Date(user.dueDate).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' })}</span></p>` : ''}
         <br>
         <p id="countdown-${user.id}"></p>
-        <hr>
+      <br>
       </div>
       </div>
       `;
@@ -496,7 +497,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const timeLeft = endDate - now;
 
       if (timeLeft <= 0) {
-        countdownElement.innerHTML = '>>> Renewal failed: EXPIRED <<<<p>--- Account Status: Freeze ---';
+        countdownElement.innerHTML = '>>>> Renewal failed: EXPIRED <<<<br>--- Account Status: Freeze ---'
         return;
       }
 

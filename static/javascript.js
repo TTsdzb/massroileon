@@ -452,6 +452,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const timeLeft = endDate - now;
         return timeLeft <= 0;
       }
+      if (filter === 'active') {
+        const endDate = new Date(user.dueDate).getTime();
+        const timeLeft = endDate - now;
+        return timeLeft > 0;
+      }
       return true;
     });
 
@@ -459,6 +464,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const countdownElement = document.createElement('div');
       countdownElement.classList.add('countdown');
       countdownElement.innerHTML = `
+      <div class="box-user">
+      <div class="card-info">
         <h2>${user.userPro ? "Pro" : "New"}<span> User: ${user.displayName} ${user.userPro ? '⭐' : ''}</h2>
         <h2>ID: ${user.id}</h2>
         <h2>LifeTime Status: ${user.dueDate === undefined ? 'Yes' : 'No'}</h2>
@@ -469,6 +476,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <br>
         <p id="countdown-${user.id}"></p>
         <hr>
+      </div>
+      </div>
       `;
       countdownContainer.appendChild(countdownElement);
 
